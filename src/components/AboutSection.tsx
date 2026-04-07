@@ -1,8 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { resumeData } from "@/lib/data";
 import { motion, Variants } from "framer-motion";
+import { resumeData } from "@/lib/data";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 32 },
