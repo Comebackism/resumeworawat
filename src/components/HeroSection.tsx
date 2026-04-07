@@ -148,8 +148,8 @@ export function HeroSection() {
             {/* Social links */}
             <motion.div variants={itemVariants} className="flex gap-5" style={{ marginTop: "1rem" }}>
               {[
-                { icon: Code, href: resumeData.github, id: "hero-github" },
-                { icon: Link, href: resumeData.linkedin, id: "hero-linkedin" },
+                { icon: Code, href: "https://github.com/Comebackism", id: "hero-github" },
+                { icon: Link, href: "https://www.linkedin.com/in/worawat-boonrueng-407749401/", id: "hero-linkedin" },
                 { icon: Mail, href: `mailto:${resumeData.email}`, id: "hero-email" },
               ].map(({ icon: Icon, href, id }) => (
                 <a
