@@ -42,7 +42,7 @@ export function ProjectsSection() {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12" style={{ marginTop: "1.5rem" }}>
           {resumeData.projects.map((project, i) => (
             <motion.div
               key={project.id}
