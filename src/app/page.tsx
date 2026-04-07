@@ -12,21 +12,27 @@ export default function Home() {
       <ExperienceSection />
       <SkillsSection />
       <ProjectsSection />
-      
-      {/* Contact Section - Placeholder for now if not created */}
+
       <section id="contact" className="py-24 bg-background">
-        <div className="container mx-auto px-4 text-center">
+        {/* เพิ่ม flex flex-col items-center justify-center เข้าไปที่กล่องนี้ */}
+        <div className="container mx-auto px-4 flex flex-col items-center justify-center text-center">
+
           <h2 className="section-title mb-8 flex justify-center items-center gap-2 flex-wrap">
             <span>สนใจร่วมงานกับ</span>
             <span className="gradient-text">ผม?</span>
           </h2>
-          <p className="text-secondary mb-12 max-w-2xl mx-auto">
-            กำลังมองหานักพัฒนาที่พร้อมสร้างสรรค์ผลงานคุณภาพอยู่ใช่ไหม? 
-            ส่งข้อความมาคุยกันได้เลยครับ พร้อมเริ่มงานทันที!
+
+          {/* ลบ mx-auto ออกได้เลยเพราะ Container แม่จัดให้อยู่ตรงกลางแล้ว */}
+          <p className="text-secondary mb-12 max-w-2xl text-center">
+            กำลังมองหานักพัฒนาที่พร้อมสร้างสรรค์ผลงานคุณภาพอยู่ใช่ไหม? ส่งข้อความมาคุยกันได้เลยครับ พร้อมเริ่มงานทันที!
           </p>
-          <a href="mailto:worawat@example.com" className="btn-primary text-[1.1rem] px-10 py-4 shadow-xl shadow-violet-500/20">
+
+          <a
+            href="mailto:worawat@example.com"
+            className="btn-primary text-[1.1rem] px-10 py-4 shadow-xl shadow-violet-500/20" style={{ marginTop: "1.5rem" }}>
             ส่งอีเมลหาผมเลย 🚀
           </a>
+
         </div>
       </section>
     </>
