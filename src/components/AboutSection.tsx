@@ -131,8 +131,7 @@ export function AboutSection() {
                     marginBottom: "1rem",
                     fontSize: "0.875rem",
                     letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    color: "var(--accent-light)",
+                    textTransform: "uppercase"
                   }}
                 >
                   🎓 การศึกษา
