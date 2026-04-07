@@ -17,7 +17,7 @@ export default function Home() {
         {/* เพิ่ม flex flex-col items-center justify-center เข้าไปที่กล่องนี้ */}
         <div className="container mx-auto px-4 flex flex-col items-center justify-center text-center">
 
-          <h2 className="section-title mb-8 flex justify-center items-center gap-2 flex-wrap">
+          <h2 className="section-title mb-8 flex justify-center items-center gap-2 flex-wrap" style={{ marginTop: "1.5rem" }}>
             <span>สนใจร่วมงานกับ</span>
             <span className="gradient-text">ผม?</span>
           </h2>

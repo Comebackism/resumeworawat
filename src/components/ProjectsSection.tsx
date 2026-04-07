@@ -21,7 +21,7 @@ export function ProjectsSection() {
       // เปลี่ยนจาก inline style มาใช้ Tailwind classes จัดการ padding และ background
       className="py-24 bg-violet-500/5 dark:bg-violet-900/10"
     >
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="container mx-auto px-4 md:px-8" >
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -30,7 +30,7 @@ export function ProjectsSection() {
           transition={{ duration: 0.6 }}
           className="mb-20"
         >
-          <span className="text-sm font-bold tracking-wider text-violet-600 dark:text-violet-400 uppercase mb-2 block text-center">
+          <span className="text-sm font-bold tracking-wider text-violet-600 dark:text-violet-400 uppercase mb-2 block text-center" >
             ผลงาน
           </span>
           <h2 className="text-3xl md:text-5xl font-bold mb-3 text-gray-900 dark:text-white text-center leading-snug">

@@ -228,7 +228,16 @@ export function HeroSection() {
                   overflow: "hidden",
                 }}
               >
-                <span style={{ userSelect: "none" }}>👨‍💻</span>
+                <span style={{ userSelect: "none" }}><img
+                  src="/worawat.jpg"
+                  alt="Worawat"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover"
+                  }}
+                />
+                </span>
               </div>
             </motion.div>
 
