@@ -28,8 +28,8 @@ export default function Home() {
           </p>
 
           <a
-            href="mailto:worawat@example.com"
-            className="btn-primary text-[1.1rem] px-10 py-4 shadow-xl shadow-violet-500/20" style={{ marginTop: "1.5rem" }}>
+            href="mailto:mzamzababatv@gmail.com"
+            className="btn-primary text-[1.1rem] px-10 py-4 shadow-xl shadow-violet-500/20" style={{ marginTop: "1.5rem" }} >
             ส่งอีเมลหาผมเลย 🚀
           </a>
 
