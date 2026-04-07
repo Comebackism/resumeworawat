@@ -39,7 +39,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-grow">{children}</main>
           <footer className="py-12 text-center text-sm border-t border-white/5 opacity-60">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-4" style={{ marginTop: "1.5rem" }}>
               <p>© {new Date().getFullYear()} Worawat.dev. Built with Next.js 16 & Tailwind CSS v4.</p>
             </div>
           </footer>
