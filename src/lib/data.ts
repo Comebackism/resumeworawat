@@ -109,11 +109,10 @@ export const resumeData = {
       id: 4,
       title: "Gym Workout App",
       description:
-        "เว็บแอปพลิเคชันสำหรับบันทึกการออกกำลังกาย มีระบบจัดการข้อมูลผู้ใช้และเชื่อมต่อฐานข้อมูล SQLite ด้วย Prisma ORM พร้อม Dashboard สรุปผล",
+        "เว็บแอปพลิเคชันสำหรับบันทึกการออกกำลังกาย มีระบบจัดการข้อมูลผู้ใช้ พร้อม Dashboard สรุปผล เข้าทดลองใช้งานโดยใช้รหัสทดสอบ [user@gymapp.com] / SecurePass123!",
       tech: ["Next.js", "Prisma", "SQLite", "Tailwind CSS"],
       github: "https://github.com/Comebackism/gymapp",
       demo: "https://gymapp-rosy-three.vercel.app/",
-      demo2: "https://gymapp-rosy-three.vercel.app/dashboard",
       gradient: "from-blue-600 to-cyan-600",
       emoji: "💪",
     },
