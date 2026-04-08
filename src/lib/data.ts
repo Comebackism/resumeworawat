@@ -31,7 +31,7 @@ export const resumeData = {
       period: "2025 – ปัจจุบัน",
       description:
         "เรียนรู้และพัฒนาโปรเจกต์ในหลักสูตร ทำงานร่วมกับเพื่อนเพื่อสร้าง Web Application ที่แก้ปัญหาจริง พร้อมเรียนรู้ Best Practices จากอาจารย์",
-      tags: ["HTML/CSS", "Java", "Python", "SQL"],
+      tags: ["HTML/CSS", "Java", "Python", "SQL", "PHP"],
     },
   ],
 
@@ -45,6 +45,7 @@ export const resumeData = {
     { name: "SQL", level: 70, category: "Backend" },
     { name: "Oracle Database", level: 60, category: "Backend" },
     { name: "Java OOP", level: 65, category: "Backend" },
+    { name: "PHP", level: 60, category: "Backend" },
     { name: "Python", level: 55, category: "Backend" },
     { name: "AI Prompt Engineering", level: 85, category: "AI" },
     { name: "Figma / UI Design", level: 60, category: "Design" },
@@ -59,6 +60,7 @@ export const resumeData = {
     { name: "SQL", icon: "🗄️" },
     { name: "Oracle", icon: "🔶" },
     { name: "Java OOP", icon: "☕" },
+    { name: "PHP", icon: "🐘" },
     { name: "Tailwind", icon: "🎨" },
     { name: "Python", icon: "🐍" },
     { name: "Figma", icon: "🖌️" },
