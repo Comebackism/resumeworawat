@@ -85,6 +85,7 @@ export const resumeData = {
       tech: ["Next.js", "Firebase", "TypeScript", "Tailwind CSS"],
       github: "https://github.com/Comebackism/wafflehongongartee",
       demo: "https://wafflehongongartee.vercel.app/",
+      demo2: "https://wafflehongongartee.vercel.app/kitchen", // เพิ่มพื้นที่สำหรับ Demo ที่ 2 เช่น หน้า Admin
       gradient: "from-amber-600 to-orange-600",
       emoji: "🧇",
     },
@@ -96,6 +97,7 @@ export const resumeData = {
       tech: ["Next.js", "CSS", "Google Fonts"],
       github: "https://github.com/Comebackism/mjaytea",
       demo: "https://mjaytea.vercel.app",
+      demo2: "",
       gradient: "from-emerald-600 to-teal-600",
       emoji: "🍵",
     },

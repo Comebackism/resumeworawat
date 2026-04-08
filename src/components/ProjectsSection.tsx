@@ -30,7 +30,7 @@ export function ProjectsSection() {
           transition={{ duration: 0.6 }}
           className="mb-20"
         >
-          <span className="text-sm font-bold tracking-wider text-violet-600 dark:text-violet-400 uppercase mb-2 block text-center" >
+          <span className="text-sm font-bold tracking-wider text-violet-600 dark:text-violet-400 uppercase mb-2 block text-center" style={{ padding: "2rem 0" }}>
             ผลงาน
           </span>
           <h2 className="text-3xl md:text-5xl font-bold mb-3 text-gray-900 dark:text-white text-center leading-snug">
@@ -42,7 +42,7 @@ export function ProjectsSection() {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12" style={{ marginTop: "1.5rem" }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12" style={{ marginTop: "1.5rem", paddingBottom: "2rem" }}>
           {resumeData.projects.map((project, i) => (
             <motion.div
               key={project.id}
@@ -90,12 +90,12 @@ export function ProjectsSection() {
 
 
                 {/* Links */}
-                <div className="flex gap-4 mt-auto pt-8">
+                <div className="flex flex-wrap gap-4 mt-auto pt-8">
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex justify-center items-center gap-2 flex-1 px-4 py-3 text-[0.95rem] font-semibold text-gray-700 dark:text-gray-300 bg-gray-100/80 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/10 rounded-full transition-all duration-200"
+                    className="flex justify-center items-center gap-2 flex-1 min-w-[120px] px-4 py-3 text-[0.95rem] font-semibold text-gray-700 dark:text-gray-300 bg-gray-100/80 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/10 rounded-full transition-all duration-200"
                   >
                     <Code size={18} /> GitHub
                   </a>
@@ -103,10 +103,21 @@ export function ProjectsSection() {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex justify-center items-center gap-2 flex-1 px-4 py-3 text-[0.95rem] font-semibold text-white bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 rounded-full transition-all duration-200 shadow-lg shadow-violet-500/25"
+                    className="flex justify-center items-center gap-2 flex-1 min-w-[120px] px-4 py-3 text-[0.95rem] font-semibold text-white bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 rounded-full transition-all duration-200 shadow-lg shadow-violet-500/25"
                   >
                     <ExternalLink size={18} /> Demo
                   </a>
+                  {/* ปุ่ม Demo ที่ 2 (จะแสดงเมื่อมีข้อมูล) */}
+                  {project.demo2 && (
+                    <a
+                      href={project.demo2}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex justify-center items-center gap-2 flex-1 min-w-[120px] px-4 py-3 text-[0.95rem] font-semibold text-white bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 rounded-full transition-all duration-200 shadow-lg shadow-violet-500/25"
+                    >
+                      <ExternalLink size={18} /> Demo 2
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
