@@ -6,7 +6,7 @@ export const resumeData = {
   bio: `นักพัฒนาซอฟต์แวร์ที่หลงใหลในการสร้างประสบการณ์ดิจิทัลที่สวยงามและใช้งานได้จริง 
 ต้องการหาประสบการณ์ในการพัฒนา Web Application ตั้งแต่ Frontend จนถึง Backend 
 ชอบเรียนรู้เทคโนโลยีใหม่ๆ และแก้ปัญหาที่ซับซ้อนด้วยวิธีที่เรียบง่าย`,
-  email: "worawat.boonrueng@example.com",
+  email: "mzamzababatv@gmail.com",
   phone: "",
   location: "หาดใหญ่, สงขลา, ประเทศไทย",
   github: "https://github.com/Comebackism",
@@ -104,6 +104,18 @@ export const resumeData = {
       demo2: "",
       gradient: "from-emerald-600 to-teal-600",
       emoji: "🍵",
+    },
+    {
+      id: 4,
+      title: "Gym Workout App",
+      description:
+        "เว็บแอปพลิเคชันสำหรับบันทึกการออกกำลังกาย มีระบบจัดการข้อมูลผู้ใช้และเชื่อมต่อฐานข้อมูล SQLite ด้วย Prisma ORM พร้อม Dashboard สรุปผล",
+      tech: ["Next.js", "Prisma", "SQLite", "Tailwind CSS"],
+      github: "https://github.com/Comebackism/gymapp",
+      demo: "https://gymapp-rosy-three.vercel.app/",
+      demo2: "https://gymapp-rosy-three.vercel.app/dashboard",
+      gradient: "from-blue-600 to-cyan-600",
+      emoji: "💪",
     },
   ],
 

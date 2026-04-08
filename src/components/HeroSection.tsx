@@ -243,7 +243,7 @@ export function HeroSection() {
 
             {/* Floating tech badges */}
             {[
-              { label: "3+", sub: "โปรเจกต์", pos: { top: 0, left: -60 }, delay: 0.6, emoji: "💼" },
+              { label: "4+", sub: "โปรเจกต์", pos: { top: 0, left: -60 }, delay: 0.6, emoji: "💼" },
               { label: "1K+", sub: "ผู้ใช้งาน", pos: { top: -20, right: -70 }, delay: 0.7, emoji: "👥" },
               { label: "100%", sub: "Passion", pos: { bottom: 20, left: -80 }, delay: 0.8, emoji: "🔥" },
               { label: "Next.js", sub: "Main Stack", pos: { bottom: -10, right: -60 }, delay: 0.9, emoji: "⚡" },

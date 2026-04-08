@@ -22,7 +22,7 @@ const stagger = {
 
 export function AboutSection() {
   const stats = [
-    { value: "3+", label: "โปรเจกต์" },
+    { value: "4+", label: "โปรเจกต์" },
     { value: "1K+", label: "ผู้ใช้งาน" },
     { value: "100%", label: "Passion" },
     { value: "∞", label: "ความตั้งใจ" },
