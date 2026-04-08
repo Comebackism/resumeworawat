@@ -28,7 +28,7 @@ export function ExperienceSection() {
         >
           <span className="section-label">ประสบการณ์</span>
           <h2 className="section-title" style={{ marginBottom: "3rem" }}>
-            เส้นทาง<span className="gradient-text">การทำงาน</span>
+            เส้นทาง<span className="gradient-text">การเรียนรู้</span>
           </h2>
         </motion.div>
 

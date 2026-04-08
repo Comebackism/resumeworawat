@@ -22,10 +22,10 @@ const stagger = {
 
 export function AboutSection() {
   const stats = [
-    { value: "3+", label: "ปีประสบการณ์" },
-    { value: "20+", label: "โปรเจกต์" },
-    { value: "50K+", label: "ผู้ใช้งาน" },
+    { value: "3+", label: "โปรเจกต์" },
+    { value: "1K+", label: "ผู้ใช้งาน" },
     { value: "100%", label: "Passion" },
+    { value: "∞", label: "ความตั้งใจ" },
   ];
 
   return (
@@ -45,7 +45,7 @@ export function AboutSection() {
             <span className="section-label">เกี่ยวกับผม</span>
           </motion.div>
           <motion.h2 variants={fadeUp} className="section-title" style={{ marginBottom: "3rem" }}>
-            ทำไมต้องเลือก<span className="gradient-text">ผม</span>?
+            ทำไมต้องให้โอกาส<span className="gradient-text">ผม</span>?
           </motion.h2>
 
           {/* Two-column layout */}
@@ -60,30 +60,30 @@ export function AboutSection() {
             {/* Left: bio cards */}
             <motion.div variants={fadeUp} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
               <div className="glass-card" style={{ padding: "1.75rem" }}>
-                <div style={{ fontSize: "1.5rem", marginBottom: "0.75rem" }}>🧠</div>
+                <div style={{ fontSize: "1.5rem", marginBottom: "0.75rem" }}>🌱</div>
                 <h3 style={{ fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.5rem", fontSize: "1rem" }}>
-                  Problem Solver Mindset
+                  พร้อมเรียนรู้เสมอ
                 </h3>
                 <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem", lineHeight: 1.7 }}>
-                  ผมมองทุกปัญหาเป็นโอกาสในการเรียนรู้ ชอบวิเคราะห์ root cause และหาวิธีแก้ที่ยั่งยืน
+                  ผมเชื่อว่าการลงมือทำคือครูที่ดีที่สุด ทุกโปรเจกต์คือโอกาสในการเติบโต พร้อมรับ Feedback และปรับปรุงตัวเองตลอดเวลา
                 </p>
               </div>
               <div className="glass-card" style={{ padding: "1.75rem" }}>
                 <div style={{ fontSize: "1.5rem", marginBottom: "0.75rem" }}>🎨</div>
                 <h3 style={{ fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.5rem", fontSize: "1rem" }}>
-                  Design + Dev Hybrid
+                  ชอบทำให้สวย & ใช้งานได้จริง
                 </h3>
                 <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem", lineHeight: 1.7 }}>
-                  เข้าใจทั้งฝั่ง Design และ Development ทำให้ผลลัพธ์ออกมาสวยงามและ Functional พร้อมกัน
+                  ผมไม่ได้แค่เขียนโค้ดให้มันทำงานได้ แต่อยากให้ผลลัพธ์ออกมาสวยงาม ใช้ง่าย และน่าประทับใจ
                 </p>
               </div>
               <div className="glass-card" style={{ padding: "1.75rem" }}>
-                <div style={{ fontSize: "1.5rem", marginBottom: "0.75rem" }}>🚀</div>
+                <div style={{ fontSize: "1.5rem", marginBottom: "0.75rem" }}>🔥</div>
                 <h3 style={{ fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.5rem", fontSize: "1rem" }}>
-                  Continuous Learner
+                  Passion ที่ไม่มีวันหมด
                 </h3>
                 <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem", lineHeight: 1.7 }}>
-                  ติดตามเทรนด์เทคโนโลยีอยู่เสมอ เรียนรู้สิ่งใหม่ทุกวัน และชอบแชร์ความรู้ให้ทีม
+                  ถึงจะยังเป็นเด็กใหม่ แต่ความตั้งใจและความหลงใหลในการเขียนโค้ดของผม 100% เต็มเสมอ
                 </p>
               </div>
             </motion.div>

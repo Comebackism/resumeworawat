@@ -76,7 +76,7 @@ export function HeroSection() {
                     boxShadow: "0 0 6px #4ade80",
                   }}
                 />
-                พร้อมรับงานใหม่ · Open to Work
+                กำลังหาประสบการณ์ · Looking for Experience
               </span>
             </motion.div>
 
@@ -93,7 +93,7 @@ export function HeroSection() {
                 marginBottom: "0.5rem",
               }}
             >
-              สวัสดี, ผม
+              สวัสดีครับ, ผม
               <br />
               <span className="gradient-text">{resumeData.name}</span>
             </motion.h1>
@@ -243,9 +243,9 @@ export function HeroSection() {
 
             {/* Floating tech badges */}
             {[
-              { label: "3+ ปี", sub: "ประสบการณ์", pos: { top: 0, left: -60 }, delay: 0.6, emoji: "🚀" },
-              { label: "50K+", sub: "ผู้ใช้งาน", pos: { top: -20, right: -70 }, delay: 0.7, emoji: "👥" },
-              { label: "20+", sub: "โปรเจกต์", pos: { bottom: 20, left: -80 }, delay: 0.8, emoji: "💼" },
+              { label: "3+", sub: "โปรเจกต์", pos: { top: 0, left: -60 }, delay: 0.6, emoji: "💼" },
+              { label: "1K+", sub: "ผู้ใช้งาน", pos: { top: -20, right: -70 }, delay: 0.7, emoji: "👥" },
+              { label: "100%", sub: "Passion", pos: { bottom: 20, left: -80 }, delay: 0.8, emoji: "🔥" },
               { label: "Next.js", sub: "Main Stack", pos: { bottom: -10, right: -60 }, delay: 0.9, emoji: "⚡" },
             ].map((badge, i) => (
               <motion.div
