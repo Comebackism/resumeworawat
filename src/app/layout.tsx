@@ -19,8 +19,8 @@ const kanit = Kanit({
 });
 
 export const metadata: Metadata = {
-  title: "Worawat Jaidee | Full-Stack Developer",
-  description: "Personal Resume & Portfolio of Worawat Jaidee, a Full-Stack Developer based in Bangkok.",
+  title: "Worawat Boonrueng | IT Technologist",
+  description: "Personal Resume & Portfolio of Worawat Boonrueng, a student and developer based in Songkhla.",
 };
 
 export default function RootLayout({
@@ -40,7 +40,7 @@ export default function RootLayout({
           <main className="flex-grow">{children}</main>
           <footer className="py-12 text-center text-sm border-t border-white/5 opacity-60">
             <div className="container mx-auto px-4" style={{ marginTop: "1.5rem" }}>
-              <p>© {new Date().getFullYear()} Worawat.dev. Built with Next.js 16 & Tailwind CSS v4.</p>
+              <p>© {new Date().getFullYear()} Worawat.boonrueng. Built with Next.js 16 & Tailwind CSS v4.</p>
             </div>
           </footer>
         </ThemeProvider>
