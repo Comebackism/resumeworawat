@@ -30,7 +30,7 @@ export default function Home() {
           <a
             href="mailto:mzamzababatv@gmail.com"
             className="btn-primary text-[1.1rem] px-10 py-4 shadow-xl shadow-violet-500/20" style={{ marginTop: "1.5rem" }} >
-            ส่งอีเมลหาผมเลย 🚀
+            ส่งอีเมลหาผมเลย
           </a>
 
         </div>

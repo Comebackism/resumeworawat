@@ -114,6 +114,17 @@ export const resumeData = {
       gradient: "from-blue-600 to-cyan-600",
       emoji: "",
     },
+    {
+      id: 5,
+      title: "Worawat Computer E-Commerce",
+      description:
+        "เว็บไซต์ E-Commerce ร้านขายคอมพิวเตอร์และอุปกรณ์ไอที มีระบบจัดการสินค้า ระบบตะกร้า และจำลองการสั่งซื้อ",
+      tech: ["React", "Vite", "Node.js", "Express", "Tailwind CSS"],
+      github: "https://github.com/Comebackism/worawat_computer-e-com-",
+      demo: "https://worawat-computer-e-com.vercel.app/",
+      gradient: "from-fuchsia-600 to-pink-600",
+      emoji: "",
+    },
   ],
 
   education: [
