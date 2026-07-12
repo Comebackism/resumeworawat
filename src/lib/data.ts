@@ -86,8 +86,8 @@ export const resumeData = {
         "ระบบสั่งอาหารสำหรับร้านวาฟเฟิล รองรับการสั่งซื้อแบบ Real-time ผ่าน Firebase มีหน้า Dashboard สำหรับร้านค้า",
       tech: ["Next.js", "Firebase", "TypeScript", "Tailwind CSS"],
       github: "https://github.com/Comebackism/wafflehongongartee",
-      demo: "https://wafflehongongartee.vercel.app/",
-      demo2: "https://wafflehongongartee.vercel.app/kitchen", // เพิ่มพื้นที่สำหรับ Demo ที่ 2 เช่น หน้า Admin
+      demo: "https://wafflehongongartee-1x99.vercel.app/",
+      demo2: "https://wafflehongongartee-1x99.vercel.app/kitchen", // เพิ่มพื้นที่สำหรับ Demo ที่ 2 เช่น หน้า Admin
       gradient: "from-amber-600 to-orange-600",
       emoji: "",
     },
