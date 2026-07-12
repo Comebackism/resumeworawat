@@ -36,17 +36,17 @@ export const resumeData = {
   ],
 
   skills: [
-    { name: "HTML & CSS", level: 80, category: "Frontend" },
-    { name: "JavaScript / TypeScript", level: 75, category: "Frontend" },
-    { name: "React & Next.js", level: 70, category: "Frontend" },
-    { name: "Tailwind CSS", level: 75, category: "Frontend" },
+    { name: "HTML & CSS", level: 65, category: "Frontend" },
+    { name: "JavaScript / TypeScript", level: 65, category: "Frontend" },
+    { name: "React & Next.js", level: 65, category: "Frontend" },
+    { name: "Tailwind CSS", level: 65, category: "Frontend" },
     { name: "Node.js", level: 60, category: "Backend" },
-    { name: "SQL", level: 70, category: "Backend" },
+    { name: "SQL", level: 65, category: "Backend" },
     { name: "Oracle Database", level: 60, category: "Backend" },
     { name: "Java OOP", level: 65, category: "Backend" },
     { name: "PHP", level: 60, category: "Backend" },
     { name: "Python", level: 55, category: "Backend" },
-    { name: "AI Prompt Engineering", level: 85, category: "AI" },
+    { name: "AI Prompt Engineering", level: 65, category: "AI" },
     { name: "Figma / UI Design", level: 60, category: "Design" },
   ],
 

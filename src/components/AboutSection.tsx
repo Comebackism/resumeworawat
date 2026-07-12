@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
+import { FaLeaf, FaPalette, FaFire, FaGraduationCap, FaAward, FaCheckCircle } from "react-icons/fa";
 import { resumeData } from "@/lib/data";
 
 const fadeUp: Variants = {
@@ -60,29 +61,29 @@ export function AboutSection() {
             {/* Left: bio cards */}
             <motion.div variants={fadeUp} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
               <div className="glass-card" style={{ padding: "1.75rem" }}>
-                <div style={{ fontSize: "1.5rem", marginBottom: "0.75rem" }}>🌱</div>
+                <FaLeaf size={28} style={{ color: "var(--text-primary)", marginBottom: "0.75rem" }} />
                 <h3 style={{ fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.5rem", fontSize: "1rem" }}>
                   พร้อมเรียนรู้เสมอ
                 </h3>
-                <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem", lineHeight: 1.7 }}>
+                <p style={{ color: "var(--text-primary)", fontSize: "0.9rem", lineHeight: 1.7 }}>
                   ผมเชื่อว่าการลงมือทำคือครูที่ดีที่สุด ทุกโปรเจกต์คือโอกาสในการเติบโต พร้อมรับ Feedback และปรับปรุงตัวเองตลอดเวลา
                 </p>
               </div>
               <div className="glass-card" style={{ padding: "1.75rem" }}>
-                <div style={{ fontSize: "1.5rem", marginBottom: "0.75rem" }}>🎨</div>
+                <FaPalette size={28} style={{ color: "var(--text-primary)", marginBottom: "0.75rem" }} />
                 <h3 style={{ fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.5rem", fontSize: "1rem" }}>
                   ชอบทำให้สวย & ใช้งานได้จริง
                 </h3>
-                <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem", lineHeight: 1.7 }}>
+                <p style={{ color: "var(--text-primary)", fontSize: "0.9rem", lineHeight: 1.7 }}>
                   ผมไม่ได้แค่เขียนโค้ดให้มันทำงานได้ แต่อยากให้ผลลัพธ์ออกมาสวยงาม ใช้ง่าย และน่าประทับใจ
                 </p>
               </div>
               <div className="glass-card" style={{ padding: "1.75rem" }}>
-                <div style={{ fontSize: "1.5rem", marginBottom: "0.75rem" }}>🔥</div>
+                <FaFire size={28} style={{ color: "var(--text-primary)", marginBottom: "0.75rem" }} />
                 <h3 style={{ fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.5rem", fontSize: "1rem" }}>
                   Passion ที่ไม่มีวันหมด
                 </h3>
-                <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem", lineHeight: 1.7 }}>
+                <p style={{ color: "var(--text-primary)", fontSize: "0.9rem", lineHeight: 1.7 }}>
                   ถึงจะยังเป็นเด็กใหม่ แต่ความตั้งใจและความหลงใหลในการเขียนโค้ดของผม 100% เต็มเสมอ
                 </p>
               </div>
@@ -115,7 +116,7 @@ export function AboutSection() {
                     >
                       {stat.value}
                     </div>
-                    <div style={{ color: "var(--text-secondary)", fontSize: "0.8rem", marginTop: "0.375rem" }}>
+                    <div style={{ color: "var(--text-primary)", fontSize: "0.8rem", marginTop: "0.375rem" }}>
                       {stat.label}
                     </div>
                   </div>
@@ -126,6 +127,9 @@ export function AboutSection() {
               <div className="glass-card" style={{ padding: "1.75rem" }}>
                 <h3
                   style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
                     fontWeight: 700,
                     color: "var(--text-primary)",
                     marginBottom: "1rem",
@@ -134,14 +138,14 @@ export function AboutSection() {
                     textTransform: "uppercase"
                   }}
                 >
-                  🎓 การศึกษา
+                  <FaGraduationCap size={18} style={{ color: "var(--text-primary)" }} /> การศึกษา
                 </h3>
                 {resumeData.education.map((edu) => (
                   <div key={edu.degree}>
                     <div style={{ fontWeight: 600, color: "var(--text-primary)", fontSize: "0.95rem" }}>
                       {edu.degree}
                     </div>
-                    <div style={{ color: "var(--text-secondary)", fontSize: "0.875rem", marginTop: "0.25rem" }}>
+                    <div style={{ color: "var(--text-primary)", fontSize: "0.875rem", marginTop: "0.25rem" }}>
                       {edu.school}
                     </div>
                     <div
@@ -159,24 +163,27 @@ export function AboutSection() {
               <div className="glass-card" style={{ padding: "1.75rem" }}>
                 <h3
                   style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
                     fontWeight: 700,
                     marginBottom: "1rem",
                     fontSize: "0.875rem",
                     letterSpacing: "0.08em",
                     textTransform: "uppercase",
-                    color: "var(--accent-light)",
+                    color: "var(--text-primary)",
                   }}
                 >
-                  🏆 Certifications
+                  <FaAward size={18} style={{ color: "var(--text-primary)" }} /> Certifications
                 </h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                   {resumeData.certifications.map((cert) => (
                     <div
                       key={cert}
                       className="flex items-center gap-2"
-                      style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}
+                      style={{ fontSize: "0.875rem", color: "var(--text-primary)" }}
                     >
-                      <span style={{ color: "var(--accent-light)" }}>✓</span>
+                      <FaCheckCircle size={14} style={{ color: "var(--text-primary)" }} />
                       {cert}
                     </div>
                   ))}

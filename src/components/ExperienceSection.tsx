@@ -17,7 +17,7 @@ export function ExperienceSection() {
   return (
     <section
       id="experience"
-      style={{ padding: "6rem 0", background: "rgba(124,92,252,0.03)" }}
+      style={{ padding: "6rem 0", background: "rgba(0, 156, 222, 0.03)" }}
     >
       <div className="container">
         <motion.div
@@ -93,8 +93,8 @@ export function ExperienceSection() {
                   </div>
                   <span
                     style={{
-                      background: "rgba(124,92,252,0.1)",
-                      border: "1px solid rgba(124,92,252,0.2)",
+                      background: "rgba(0, 156, 222, 0.1)",
+                      border: "1px solid rgba(0, 156, 222, 0.2)",
                       borderRadius: "8px",
                       padding: "0.25rem 0.75rem",
                       fontSize: "0.78rem",

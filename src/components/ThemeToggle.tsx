@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
-import { Sun, Moon } from "lucide-react";
+import { FiSun, FiMoon } from "react-icons/fi";
 
 export function ThemeToggle() {
   const { theme, toggle } = useTheme();
@@ -30,7 +30,7 @@ export function ThemeToggle() {
             exit={{ rotate: 90, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <Moon size={16} />
+            <FiMoon size={16} />
           </motion.div>
         ) : (
           <motion.div
@@ -40,7 +40,7 @@ export function ThemeToggle() {
             exit={{ rotate: -90, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <Sun size={16} />
+            <FiSun size={16} />
           </motion.div>
         )}
       </AnimatePresence>

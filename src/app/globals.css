@@ -9,45 +9,47 @@
   /* Using variables injected directly by Next.js font optimization */
 
   /* Colors */
-  --bg: #0c0c14;
-  --bg-card: #12121e;
-  --bg-card-hover: #1a1a28;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.18);
+  --bg: #001a33;
+  --bg-card: #003c71;
+  --bg-card-hover: #004d91;
+  --border: rgba(255, 255, 255, 0.15);
+  --border-hover: rgba(255, 255, 255, 0.3);
 
-  --text-primary: #f0f0ff;
-  --text-secondary: #8888aa;
-  --text-muted: #55556a;
+  --text-primary: #ffffff;
+  --text-secondary: #e0f0ff;
+  --text-muted: #99c2e8;
 
-  --accent: #7c5cfc;
-  --accent-light: #a78bfa;
-  --accent-glow: rgba(124, 92, 252, 0.3);
+  --accent: #009cde;
+  --accent-light: #66ccff;
+  --accent-glow: rgba(0, 156, 222, 0.4);
 
-  --gradient-primary: linear-gradient(135deg, #7c5cfc 0%, #c084fc 100%);
+  --gradient-primary: linear-gradient(135deg, #009cde 0%, #003c71 100%);
   --gradient-hero: radial-gradient(
     ellipse 80% 60% at 50% 0%,
-    rgba(124, 92, 252, 0.18) 0%,
+    rgba(0, 156, 222, 0.25) 0%,
     transparent 70%
   );
 
   /* Light mode default-ish */
-  --surface: #ffffff;
+  --surface: #f0f8ff;
+  --bg-navbar: rgba(0, 26, 51, 0.85);
 }
 
 [data-theme="light"] {
-  --bg: #f5f5ff;
+  --bg: #f0f8ff;
   --bg-card: #ffffff;
-  --bg-card-hover: #f0f0fa;
-  --border: rgba(100, 80, 220, 0.1);
-  --border-hover: rgba(100, 80, 220, 0.25);
-  --text-primary: #0c0c20;
-  --text-secondary: #4a4a6a;
-  --text-muted: #8888aa;
+  --bg-card-hover: #e6f2ff;
+  --border: rgba(0, 60, 113, 0.15);
+  --border-hover: rgba(0, 60, 113, 0.3);
+  --text-primary: #002244;
+  --text-secondary: #003c71;
+  --text-muted: #4d79a3;
   --gradient-hero: radial-gradient(
     ellipse 80% 60% at 50% 0%,
-    rgba(124, 92, 252, 0.12) 0%,
+    rgba(0, 156, 222, 0.15) 0%,
     transparent 70%
   );
+  --bg-navbar: rgba(240, 248, 255, 0.85);
 }
 
 /* ============================================================
@@ -89,6 +91,36 @@ body {
 ::-webkit-scrollbar-thumb {
   background: var(--accent);
   border-radius: 99px;
+}
+
+/* ============================================================
+   NAVBAR LINKS
+   ============================================================ */
+.nav-link {
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 /* ============================================================
@@ -276,16 +308,17 @@ section {
   padding: 0.25rem 0.75rem;
   border-radius: 99px;
   font-size: 0.75rem;
-  font-weight: 500;
-  background: rgba(124, 92, 252, 0.1);
-  color: var(--accent-light);
-  border: 1px solid rgba(124, 92, 252, 0.2);
+  font-weight: 600;
+  background: rgba(0, 156, 222, 0.1);
+  color: var(--text-primary);
+  border: 1px solid rgba(0, 156, 222, 0.2);
   transition: all 0.2s ease;
 }
 
 .tag:hover {
-  background: rgba(124, 92, 252, 0.2);
-  border-color: rgba(124, 92, 252, 0.4);
+  background: rgba(0, 156, 222, 0.2);
+  border-color: rgba(0, 156, 222, 0.4);
+  color: var(--text-primary);
 }
 
 /* ============================================================

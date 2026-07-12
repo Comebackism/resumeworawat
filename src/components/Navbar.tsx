@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { FiMenu, FiX } from "react-icons/fi";
 import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
@@ -32,7 +32,7 @@ export function Navbar() {
         className="fixed top-0 left-0 right-0 z-50"
         style={{
           background: scrolled
-            ? "rgba(12,12,20,0.85)"
+            ? "var(--bg-navbar)"
             : "transparent",
           backdropFilter: scrolled ? "blur(20px)" : "none",
           borderBottom: scrolled ? "1px solid var(--border)" : "none",
@@ -101,7 +101,7 @@ export function Navbar() {
               id="mobile-menu-btn"
               aria-label="Toggle mobile menu"
             >
-              {menuOpen ? <X size={18} /> : <Menu size={18} />}
+              {menuOpen ? <FiX size={18} /> : <FiMenu size={18} />}
             </button>
           </div>
         </div>
@@ -117,7 +117,7 @@ export function Navbar() {
             transition={{ duration: 0.25 }}
             className="fixed top-[68px] left-0 right-0 z-40 md:hidden"
             style={{
-              background: "rgba(12,12,20,0.95)",
+              background: "var(--bg-navbar)",
               backdropFilter: "blur(20px)",
               borderBottom: "1px solid var(--border)",
               padding: "1rem 1.5rem 1.5rem",

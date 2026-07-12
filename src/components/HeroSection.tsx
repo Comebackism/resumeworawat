@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MapPin, ArrowDown, Code, Link } from "lucide-react";
+import { FiMail, FiMapPin, FiArrowDown, FiCode, FiLink } from "react-icons/fi";
 import { resumeData } from "@/lib/data";
 
 // Stagger animation helpers
@@ -57,8 +57,8 @@ export function HeroSection() {
               <span
                 className="inline-flex items-center gap-2"
                 style={{
-                  background: "rgba(124,92,252,0.1)",
-                  border: "1px solid rgba(124,92,252,0.25)",
+                  background: "var(--bg-card)",
+                  border: "1px solid var(--border)",
                   borderRadius: "99px",
                   padding: "0.35rem 1rem",
                   fontSize: "0.8rem",
@@ -130,7 +130,7 @@ export function HeroSection() {
               className="flex items-center gap-2"
               style={{ color: "var(--text-muted)", fontSize: "0.875rem", marginBottom: "2rem" }}
             >
-              <MapPin size={14} />
+              <FiMapPin size={14} />
               <span>{resumeData.location}</span>
             </motion.div>
 
@@ -138,19 +138,19 @@ export function HeroSection() {
             {/* CTA Buttons */}
             <motion.div variants={itemVariants} className="flex items-center gap-3 flex-wrap">
               <a href="#contact" className="btn-primary" id="hero-contact-btn">
-                <Mail size={16} /> ติดต่อผม
+                <FiMail size={16} /> ติดต่อผม
               </a>
               <a href="#projects" className="btn-secondary" id="hero-projects-btn">
-                ดูผลงาน <ArrowDown size={16} />
+                ดูผลงาน <FiArrowDown size={16} />
               </a>
             </motion.div>
 
             {/* Social links */}
             <motion.div variants={itemVariants} className="flex gap-5" style={{ marginTop: "1rem" }}>
               {[
-                { icon: Code, href: "https://github.com/Comebackism", id: "hero-github" },
-                { icon: Link, href: "https://www.linkedin.com/in/worawat-boonrueng-407749401/", id: "hero-linkedin" },
-                { icon: Mail, href: `mailto:${resumeData.email}`, id: "hero-email" },
+                { icon: FiCode, href: "https://github.com/Comebackism", id: "hero-github" },
+                { icon: FiLink, href: "https://www.linkedin.com/in/worawat-boonrueng-407749401/", id: "hero-linkedin" },
+                { icon: FiMail, href: `mailto:${resumeData.email}`, id: "hero-email" },
               ].map(({ icon: Icon, href, id }) => (
                 <a
                   key={id}
@@ -296,7 +296,7 @@ export function HeroSection() {
             animate={{ y: [0, 6, 0] }}
             transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
           >
-            <ArrowDown size={14} />
+            <FiArrowDown size={14} />
           </motion.div>
         </motion.div>
       </div>
