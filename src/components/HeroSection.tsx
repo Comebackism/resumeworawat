@@ -244,7 +244,7 @@ export function HeroSection() {
             {/* Floating tech badges */}
             {[
               { label: "4+", sub: "โปรเจกต์", pos: { top: 0, left: -60 }, delay: 0.6 },
-              { label: "1K+", sub: "ผู้ใช้งาน", pos: { top: -20, right: -70 }, delay: 0.7 },
+              { label: "24/7", sub: "พร้อมเรียนรู้", pos: { top: -20, right: -70 }, delay: 0.7 },
               { label: "100%", sub: "Passion", pos: { bottom: 20, left: -80 }, delay: 0.8 },
             ].map((badge, i) => (
               <motion.div
