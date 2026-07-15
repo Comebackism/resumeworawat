@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { resumeData } from "@/lib/data";
 
-const categories = ["ทั้งหมด", "Frontend", "Backend", "DevOps", "Design"];
+const categories = ["ทั้งหมด", "Frontend", "Backend", "Language", "Design"];
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const fadeUp: any = {
