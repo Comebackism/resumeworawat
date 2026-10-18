@@ -1,147 +1,180 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { FiExternalLink, FiCode } from "react-icons/fi";
+import { useRef, useState, type KeyboardEvent } from "react";
+import { FiCode, FiExternalLink } from "react-icons/fi";
 import { resumeData } from "@/lib/data";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const fadeUp: any = {
-  hidden: { opacity: 0, y: 32 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay: i * 0.1, ease: "easeInOut" },
-  }),
-};
+const projects = resumeData.projects;
 
 export function ProjectsSection() {
+  const [active, setActive] = useState(0);
+  const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  const project = projects[active];
+
+  const handleKeyDown = (
+    event: KeyboardEvent<HTMLButtonElement>,
+    index: number,
+  ) => {
+    const last = projects.length - 1;
+    let next = index;
+
+    switch (event.key) {
+      case "ArrowDown":
+      case "ArrowRight":
+        next = index === last ? 0 : index + 1;
+        break;
+      case "ArrowUp":
+      case "ArrowLeft":
+        next = index === 0 ? last : index - 1;
+        break;
+      case "Home":
+        next = 0;
+        break;
+      case "End":
+        next = last;
+        break;
+      default:
+        return;
+    }
+
+    event.preventDefault();
+    setActive(next);
+    tabRefs.current[next]?.focus();
+  };
+
   return (
-    <section
-      id="projects"
-      // เปลี่ยนจาก inline style มาใช้ Tailwind classes จัดการ padding และ background
-      className="py-24 bg-[#003C71]/5 dark:bg-[#001A33]/50"
-    >
-      <div className="container mx-auto px-4 md:px-8" >
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-20"
-        >
-          <span className="text-sm font-bold tracking-wider text-[#009CDE] dark:text-[#66CCFF] uppercase mb-2 block text-center" style={{ padding: "2rem 0" }}>
-            ผลงาน
-          </span>
-          <h2 className="text-3xl md:text-5xl font-bold mb-3 text-gray-900 dark:text-white text-center leading-snug">
-            โปรเจกต์ที่ <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#009CDE] to-[#003C71] dark:from-[#66CCFF] dark:to-[#009CDE]">ภาคภูมิใจ</span>
+    <section id="projects" className="record-section" aria-labelledby="projects-title">
+      <div className="record-head">
+        <div className="section-head">
+          <h2 className="section-title" id="projects-title">
+            ผลงานที่ใช้งานจริง
           </h2>
-          <p className="text-[1.05rem] text-gray-600 dark:text-gray-400 text-center">
-            คัดสรรผลงานที่ดีที่สุดจากประสบการณ์การทำงานจริง
+          <p className="section-meta">
+            Work orders
+            <br />
+            {projects.length} records
           </p>
-        </motion.div>
+        </div>
+      </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12" style={{ marginTop: "1.5rem", paddingBottom: "2rem" }}>
-          {resumeData.projects.map((project, i) => (
-            <motion.div
-              key={project.id}
-              custom={i}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-              id={`project-${project.id}`}
-              className="h-full"
-            >
-              {/* ปรับ Padding ให้กว้างขั้นสุดยอด (ประมาณ 64px) */}
-              <div className="relative flex flex-col h-full min-h-[380px] p-12 lg:p-16 rounded-[32px] bg-white/60 dark:bg-gray-800/60 backdrop-blur-md border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 group" style={{ padding: "3.5rem" }}>
+      <div className="spread">
+        <div className="page page--left">
+          <div className="record-line">
+            <span>Work register</span>
+            <span>Select a record</span>
+          </div>
 
-                {/* Color accent bar */}
-                <div
-                  className="absolute top-0 left-0 right-0 h-1.5"
-                  style={{
-                    background: "var(--gradient-primary)",
-                  }}
-                />
+          <div
+            className="work-register"
+            role="tablist"
+            aria-label="รายการผลงาน"
+            aria-orientation="vertical"
+          >
+            {projects.map((item, index) => (
+              <button
+                key={item.id}
+                ref={(node) => {
+                  tabRefs.current[index] = node;
+                }}
+                type="button"
+                role="tab"
+                id={`work-tab-${item.id}`}
+                aria-selected={active === index}
+                aria-controls={`work-panel-${item.id}`}
+                tabIndex={active === index ? 0 : -1}
+                className="work-tab"
+                onClick={() => setActive(index)}
+                onKeyDown={(event) => handleKeyDown(event, index)}
+              >
+                <span className="work-num">{String(index + 1).padStart(2, "0")}</span>
+                <span>
+                  <span className="work-title">{item.title}</span>
+                  <span className="work-sub">{item.role}</span>
+                </span>
+                <span className="work-state">{item.status}</span>
+              </button>
+            ))}
+          </div>
 
-                {/* Emoji (แก้ไข syntax error จาก '1.5 rem' เป็น '1.5rem') */}
-                <div className="text-4xl mb-5 transform group-hover:scale-110 transition-transform duration-300 origin-left" style={{ marginTop: "1.5rem" }}>
-                  {project.emoji}
-                </div>
+          <p className="work-register-note">
+            ทุก record มี repo และ demo ให้กดตรวจ · เลือก record เพื่ออ่านรายละเอียด
+          </p>
+        </div>
 
-                {/* Title */}
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 tracking-tight">
-                  {project.title}
-                </h3>
+        <div className="page page--right">
+          <div className="record-line">
+            <span>Work order</span>
+            <span>WO-{String(active + 1).padStart(2, "0")}</span>
+          </div>
 
-                {/* Description */}
-                <p className="text-[1rem] text-gray-600 dark:text-gray-300 leading-relaxed mb-6 flex-grow">
-                  {project.description}
-                </p>
-
-                {/* Demo credentials */}
-                {project.credentials && (
-                  <div className="mb-6 rounded-2xl border border-dashed border-gray-300 dark:border-gray-600 bg-gray-50/80 dark:bg-white/5 px-4 py-3">
-                    <p className="text-xs font-bold tracking-wider text-[#003C71] dark:text-[#66CCFF] uppercase mb-2">
-                      บัญชีทดลองเข้าใช้งาน
-                    </p>
-                    <div className="flex flex-col gap-1">
-                      {project.credentials.map((account) => (
-                        <p
-                          key={account.username}
-                          className="text-sm text-gray-700 dark:text-gray-300"
-                        >
-                          <span className="font-semibold">{account.role}:</span>{" "}
-                          <code className="rounded bg-gray-200/80 dark:bg-white/10 px-1.5 py-0.5 font-mono text-[0.8rem]">
-                            {account.username}
-                          </code>{" "}
-                          /{" "}
-                          <code className="rounded bg-gray-200/80 dark:bg-white/10 px-1.5 py-0.5 font-mono text-[0.8rem]">
-                            {account.password}
-                          </code>
-                        </p>
-                      ))}
-                    </div>
-                    <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
-                      หลังเข้าสู่ระบบให้เลือกเครื่อง POS เพื่อเริ่มใช้งาน
-                    </p>
-                  </div>
-                )}
-
-                {/* Links */}
-                <div className="flex flex-wrap gap-4 mt-auto pt-8">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex justify-center items-center gap-2 flex-1 min-w-[120px] px-4 py-3 text-[0.95rem] font-semibold text-gray-700 dark:text-gray-300 bg-gray-100/80 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/10 rounded-full transition-all duration-200"
-                  >
-                    <FiCode size={18} /> GitHub
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex justify-center items-center gap-2 flex-1 min-w-[120px] px-4 py-3 text-[0.95rem] font-semibold text-white bg-[#003C71] hover:bg-[#002D5A] dark:bg-[#009CDE] dark:hover:bg-[#007AB0] dark:text-white rounded-full transition-all duration-200 shadow-lg shadow-[#009CDE]/25"
-                  >
-                    <FiExternalLink size={18} /> Demo
-                  </a>
-                  {/* ปุ่ม Demo ที่ 2 (จะแสดงเมื่อมีข้อมูล) */}
-                  {project.demo2 && (
-                    <a
-                      href={project.demo2}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex justify-center items-center gap-2 flex-1 min-w-[120px] px-4 py-3 text-[0.95rem] font-semibold text-white bg-[#003C71] hover:bg-[#002D5A] dark:bg-[#009CDE] dark:hover:bg-[#007AB0] dark:text-white rounded-full transition-all duration-200 shadow-lg shadow-[#009CDE]/25"
-                    >
-                      <FiExternalLink size={18} /> Demo 2
-                    </a>
-                  )}
-                </div>
+          <div
+            key={project.id}
+            className="work-sheet"
+            role="tabpanel"
+            id={`work-panel-${project.id}`}
+            aria-labelledby={`work-tab-${project.id}`}
+            tabIndex={0}
+          >
+            <div className="work-sheet-head">
+              <div>
+                <span className="work-order">{project.role}</span>
+                <h3 className="work-detail-title">{project.title}</h3>
               </div>
-            </motion.div>
-          ))}
+              <span className="work-state">{project.status}</span>
+            </div>
+
+            <p className="work-desc">{project.description}</p>
+
+            <p className="work-proof">
+              <strong>สิ่งนี้พิสูจน์ว่า</strong>
+              <br />
+              {project.proof}
+            </p>
+
+            <div className="tag-row work-tags">
+              {project.tech.map((tech) => (
+                <span className="tag" key={tech}>
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            {project.credentials ? (
+              <div className="credential-box">
+                <p className="credential-title">Test login · กดใช้ได้เลย</p>
+                {project.credentials.map((account) => (
+                  <p className="cred-row" key={account.username}>
+                    <span>{account.role}</span>
+                    <code className="cred-code">{account.username}</code>
+                    <span>/</span>
+                    <code className="cred-code">{account.password}</code>
+                  </p>
+                ))}
+                <p className="cred-note">หลังเข้าสู่ระบบเลือกเครื่อง POS เพื่อเริ่มใช้งาน</p>
+              </div>
+            ) : null}
+
+            <div className="work-actions">
+              {project.demo ? (
+                <a
+                  className="btn btn--cyan"
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FiExternalLink size={15} aria-hidden="true" /> เปิด Demo
+                </a>
+              ) : null}
+              <a
+                className="btn btn--outline"
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FiCode size={15} aria-hidden="true" /> GitHub
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

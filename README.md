@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Service Record — Worawat Boonrueng
 
-## Getting Started
+เว็บไซต์เรซูเม่และพอร์ตโฟลิโอภาษาไทยของ **วรวัฒน์ บุญเรือง** ออกแบบเป็น “สมุดบันทึกงานซ่อม” (service logbook) บนโต๊ะทำงานสี navy — เปิดอ่านประวัติ ทักษะ และผลงานที่ deploy ใช้งานจริง พร้อมบัญชีทดลองของระบบ POS
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router, static output)
+- TypeScript
+- Tailwind CSS v4 + a custom logbook design system in `src/app/globals.css`
+- `next/font`: Anuphan (Thai body), Chakra Petch (display), JetBrains Mono (record labels)
+- `react-icons` (Feather line icons)
+
+## Run
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+เปิด [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm start
+npm run lint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Structure
 
-## Learn More
+```text
+src/app/layout.tsx        fonts, metadata, skip link
+src/app/page.tsx          resume shell (cover, book, index rail)
+src/app/globals.css       tokens + logbook components
+src/components/SiteNav    desktop index rail / mobile drawer
+src/components/HeroSection
+src/components/ExperienceSection
+src/components/SkillsSection
+src/components/ProjectsSection
+src/components/ContactSection
+src/lib/data.ts           resume content and project data
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Design documentation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `PRODUCT.md` — confirmed users, purpose, constraints, accessibility
+- `DESIGN.md` — tokens, typography, layout, components, do's and don'ts
+- `.impeccable/surfaces/src-app-page-tsx.md` — the home surface brief and direction contract
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Notes
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- The site is intentionally a single light world; the dark workbench is the frame around the paper, not a dark theme.
+- The Tee Ob Waffle POS demo uses verified test accounts: `mzaba01 / 1234` (cashier) and `nipat / 1234` (kitchen).
+- Replace `public/worawat.jpg` only with a real portrait; its provenance is embedded in the image metadata.

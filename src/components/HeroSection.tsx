@@ -1,311 +1,160 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { FiMail, FiMapPin, FiArrowDown, FiCode, FiLink } from "react-icons/fi";
+import Image from "next/image";
+import { FiArrowUpRight, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { resumeData } from "@/lib/data";
 
-// Stagger animation helpers
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.3 } },
-};
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const itemVariants: any = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeInOut" } },
-};
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const floatingBadgeVariants: any = (delay: number) => ({
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1, transition: { delay, duration: 0.5, ease: "backOut" } },
-});
-
 export function HeroSection() {
+  const [firstName, ...rest] = resumeData.name.split(" ");
+  const lastName = rest.join(" ");
+  const liveProjects = resumeData.projects;
+
   return (
-    <section
-      id="hero"
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        paddingTop: "80px",
-        paddingBottom: "4rem",
-        background: "var(--gradient-hero)",
-      }}
-    >
-      <div className="container" style={{ width: "100%" }}>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr auto",
-            gap: "4rem",
-            alignItems: "center",
-          }}
-          className="hero-grid"
-        >
-          {/* LEFT: Text content */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            style={{ maxWidth: "600px" }}
-          >
-            {/* Status Badge */}
-            <motion.div variants={itemVariants} style={{ marginBottom: "1.5rem" }}>
-              <span
-                className="inline-flex items-center gap-2"
-                style={{
-                  background: "var(--bg-card)",
-                  border: "1px solid var(--border)",
-                  borderRadius: "99px",
-                  padding: "0.35rem 1rem",
-                  fontSize: "0.8rem",
-                  color: "var(--accent-light)",
-                  fontWeight: 500,
-                }}
-              >
-                <span
-                  style={{
-                    width: 8,
-                    height: 8,
-                    borderRadius: "50%",
-                    background: "#4ade80",
-                    display: "inline-block",
-                    boxShadow: "0 0 6px #4ade80",
-                  }}
-                />
-                กำลังหาประสบการณ์ · Looking for Experience
-              </span>
-            </motion.div>
+    <section id="profile" className="spread hero" aria-labelledby="hero-name">
+      <div className="page page--left">
+        <div className="record-line">
+          <span>Asset record</span>
+          <span>No. WB-2026-01</span>
+        </div>
 
-            {/* Name */}
-            <motion.h1
-              variants={itemVariants}
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
-                fontWeight: 800,
-                lineHeight: 1.05,
-                letterSpacing: "-0.02em",
-                color: "var(--text-primary)",
-                marginBottom: "0.5rem",
-              }}
-            >
-              สวัสดีครับ, ผม
-              <br />
-              <span className="gradient-text">{resumeData.name}</span>
-            </motion.h1>
-
-            {/* Title */}
-            <motion.p
-              variants={itemVariants}
-              style={{
-                fontSize: "1.15rem",
-                color: "var(--text-secondary)",
-                marginBottom: "1rem",
-                fontWeight: 500,
-              }}
-            >
-              {resumeData.title}
-            </motion.p>
-
-            {/* Bio */}
-            <motion.p
-              variants={itemVariants}
-              style={{
-                fontSize: "1rem",
-                color: "var(--text-secondary)",
-                lineHeight: 1.8,
-                marginBottom: "2rem",
-              }}
-            >
-              {resumeData.bio}
-            </motion.p>
-
-            {/* Location */}
-            <motion.div
-              variants={itemVariants}
-              className="flex items-center gap-2"
-              style={{ color: "var(--text-muted)", fontSize: "0.875rem", marginBottom: "2rem" }}
-            >
-              <FiMapPin size={14} />
-              <span>{resumeData.location}</span>
-            </motion.div>
-
-            {/* CTA Buttons */}
-            {/* CTA Buttons */}
-            <motion.div variants={itemVariants} className="flex items-center gap-3 flex-wrap">
-              <a href="#contact" className="btn-primary" id="hero-contact-btn">
-                <FiMail size={16} /> ติดต่อผม
-              </a>
-              <a href="#projects" className="btn-secondary" id="hero-projects-btn">
-                ดูผลงาน <FiArrowDown size={16} />
-              </a>
-            </motion.div>
-
-            {/* Social links */}
-            <motion.div variants={itemVariants} className="flex gap-5" style={{ marginTop: "1rem" }}>
-              {[
-                { icon: FiCode, href: "https://github.com/Comebackism", id: "hero-github" },
-                { icon: FiLink, href: "https://www.linkedin.com/in/worawat-boonrueng-407749401/", id: "hero-linkedin" },
-                { icon: FiMail, href: `mailto:${resumeData.email}`, id: "hero-email" },
-              ].map(({ icon: Icon, href, id }) => (
-                <a
-                  key={id}
-                  id={id}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-hover-btn"
-                  style={{
-                    width: 48,
-                    height: 48,
-                    borderRadius: "50%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    background: "var(--bg-card)",
-                    border: "1px solid var(--border)",
-                    color: "var(--text-secondary)",
-                    textDecoration: "none",
-                    transition: "all 0.25s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "var(--accent)";
-                    (e.currentTarget as HTMLElement).style.color = "var(--accent-light)";
-                    (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "var(--border)";
-                    (e.currentTarget as HTMLElement).style.color = "var(--text-secondary)";
-                    (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-                  }}
-                >
-                  <Icon size={16} />
-                </a>
-              ))}
-            </motion.div>
-          </motion.div>
-
-          {/* RIGHT: Avatar + floating badges */}
-          <div
-            className="hidden lg:flex"
-            style={{ position: "relative", flexShrink: 0 }}
-          >
-            {/* Avatar circle */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-              className="animate-float"
-              style={{ position: "relative" }}
-            >
-              {/* Glow ring */}
-              <div
-                style={{
-                  position: "absolute",
-                  inset: "-8px",
-                  borderRadius: "50%",
-                  background: "conic-gradient(from 0deg, var(--accent), transparent, var(--accent-light), transparent, var(--accent))",
-                  animation: "spin-slow 8s linear infinite",
-                  opacity: 0.5,
-                }}
+        <div className="hero-head">
+          <div className="portrait-wrap">
+            <figure className="portrait">
+              <Image
+                src={resumeData.avatar}
+                alt={`ภาพถ่ายของ ${resumeData.name}`}
+                width={400}
+                height={500}
+                className="portrait-image"
+                priority
               />
-              <div
-                style={{
-                  width: 280,
-                  height: 280,
-                  borderRadius: "50%",
-                  background: "var(--gradient-primary)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "4rem",
-                  position: "relative",
-                  border: "4px solid var(--bg)",
-                  overflow: "hidden",
-                }}
-              >
-                <span style={{ userSelect: "none" }}><img
-                  src="/worawat.jpg"
-                  alt="Worawat"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover"
-                  }}
-                />
-                </span>
-              </div>
-            </motion.div>
+            </figure>
+            <p className="portrait-caption">Fig. 01 · Portrait</p>
+            <span className="stamp portrait-stamp">
+              พร้อมเริ่มงาน
+              <small>Open to work</small>
+            </span>
+          </div>
 
-            {/* Floating tech badges */}
-            {[
-              { label: "4+", sub: "โปรเจกต์", pos: { top: 0, left: -60 }, delay: 0.6 },
-              { label: "24/7", sub: "พร้อมเรียนรู้", pos: { top: -20, right: -70 }, delay: 0.7 },
-              { label: "100%", sub: "Passion", pos: { bottom: 20, left: -80 }, delay: 0.8 },
-            ].map((badge, i) => (
-              <motion.div
-                key={i}
-                variants={floatingBadgeVariants(badge.delay)}
-                initial="hidden"
-                animate="visible"
-                style={{
-                  position: "absolute",
-                  ...badge.pos,
-                  background: "var(--bg-card)",
-                  border: "1px solid var(--border)",
-                  borderRadius: "14px",
-                  padding: "0.6rem 0.9rem",
-                  backdropFilter: "blur(12px)",
-                  minWidth: "90px",
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
-                }}
-              >
-
-                <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--text-primary)", lineHeight: 1 }}>
-                  {badge.label}
-                </div>
-                <div style={{ fontSize: "0.68rem", color: "var(--text-muted)", marginTop: "2px" }}>
-                  {badge.sub}
-                </div>
-              </motion.div>
-            ))}
+          <div className="hero-id">
+            <h1 className="hero-name" id="hero-name">
+              <span>{firstName}</span>
+              <span>{lastName}</span>
+            </h1>
+            <p className="hero-name-en">{resumeData.nameEn}</p>
+            <p className="hero-role">{resumeData.title}</p>
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 0.8 }}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: "0.5rem",
-            marginTop: "4rem",
-            color: "var(--text-muted)",
-            fontSize: "0.75rem",
-          }}
-        >
-          <span>เลื่อนลงเพื่อดูเพิ่มเติม</span>
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <FiArrowDown size={14} />
-          </motion.div>
-        </motion.div>
+        <a className="hero-proof-link" href="#projects">
+          <span>
+            <strong>3 live systems</strong> · Tee Ob POS / Mjaytea / Worawat Computer
+          </span>
+          <FiArrowUpRight size={15} aria-hidden="true" />
+        </a>
+
+        <dl className="meta-list">
+          <div className="meta-row">
+            <dt className="meta-key">Location</dt>
+            <dd className="meta-val">{resumeData.location}</dd>
+          </div>
+          <div className="meta-row">
+            <dt className="meta-key">Education</dt>
+            <dd className="meta-val">เทคโนโลยีสารสนเทศ · มหาวิทยาลัยสงขลานครินทร์</dd>
+          </div>
+          <div className="meta-row">
+            <dt className="meta-key">Status</dt>
+            <dd className="meta-val">พร้อมเริ่มงาน · Internship / Junior Developer</dd>
+          </div>
+        </dl>
+
+        <p className="hero-bio">{resumeData.bio}</p>
+
+        <div className="hero-actions">
+          <a className="btn btn--ink" href="#projects">
+            ดูบันทึกผลงาน <FiArrowUpRight size={16} aria-hidden="true" />
+          </a>
+          <a className="btn btn--outline" href="#contact">
+            ติดต่อ
+          </a>
+        </div>
+
+        <div className="hero-social">
+          <a href={resumeData.github} target="_blank" rel="noopener noreferrer">
+            <FiGithub size={13} aria-hidden="true" /> GitHub
+          </a>
+          <a href={resumeData.linkedin} target="_blank" rel="noopener noreferrer">
+            <FiLinkedin size={13} aria-hidden="true" /> LinkedIn
+          </a>
+          <a href={`mailto:${resumeData.email}`}>
+            <FiMail size={13} aria-hidden="true" /> Email
+          </a>
+        </div>
+
+        <div className="hero-foot">
+          <span>Service record · since 2025</span>
+          <span>01 — 05</span>
+        </div>
       </div>
 
-      <style>{`
-        @media (max-width: 1024px) {
-          .hero-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
+      <div className="page page--right">
+        <div className="record-line">
+          <span>Service log</span>
+          <span>3 live systems</span>
+        </div>
+
+        <p className="hero-log-intro">ระบบที่ deploy ใช้งานจริง — กดเพื่อเปิดเดโม</p>
+
+        <div className="log-list">
+          {liveProjects.map((project, index) => (
+            <a
+              key={project.id}
+              className="log-row"
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`เปิดเดโม ${project.title}`}
+            >
+              <span className="log-index">{String(index + 1).padStart(2, "0")}</span>
+              <span>
+                <span className="log-title">{project.title}</span>
+                <span className="log-meta">
+                  {project.role} · {project.tech.slice(0, 3).join(" / ")}
+                </span>
+              </span>
+              <span className="log-end">
+                <span className="log-status">{project.status}</span>
+                <FiArrowUpRight className="log-arrow" size={14} aria-hidden="true" />
+              </span>
+            </a>
+          ))}
+        </div>
+
+        <ul className="hero-notes">
+          <li>ลงมือทำจริง — เรียนรู้จากโปรเจกต์ที่ deploy ไม่ใช่แค่ทฤษฎี</li>
+          <li>ใช้งานได้จริง — ความสวยต้องมาพร้อมประสบการณ์ที่ลื่นไหล</li>
+          <li>พร้อมรับ feedback — ปรับปรุงและเรียนรู้อย่างต่อเนื่อง</li>
+        </ul>
+
+        <p className="stack-label hero-stack-label">Daily toolkit</p>
+        <div className="stack-grid">
+          {resumeData.techStack.slice(0, 10).map((tech) => (
+            <span className="stack-tag" key={tech.name}>
+              {tech.name}
+            </span>
+          ))}
+        </div>
+
+        <div className="hero-proof">
+          <span className="rule-label">Proof, not claims</span>
+          <p>ทุกผลงานมี repo และ demo ให้กดตรวจ · POS ใช้งานจริงที่ร้าน · GPA 3.45</p>
+        </div>
+
+        <div className="hero-foot">
+          <span>Deployed on Vercel</span>
+          <span>02 — 05</span>
+        </div>
+      </div>
     </section>
   );
 }

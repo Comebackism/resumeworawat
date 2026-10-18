@@ -1,186 +1,121 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
 import { resumeData } from "@/lib/data";
 
-const categories = ["ทั้งหมด", "Frontend", "Backend", "Language", "Design"];
+const categoryOrder = ["Frontend", "Backend", "Language", "AI", "Design"];
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const fadeUp: any = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: i * 0.05, ease: "easeInOut" },
-  }),
-};
+const groups = categoryOrder
+  .map((category) => ({
+    category,
+    items: resumeData.skills.filter((skill) => skill.category === category),
+  }))
+  .filter((group) => group.items.length > 0);
 
-export function SkillsSection() {
-  const [active, setActive] = useState("ทั้งหมด");
+const leftGroups = groups.slice(0, 2);
+const rightGroups = groups.slice(2);
 
-  const filtered =
-    active === "ทั้งหมด"
-      ? resumeData.skills
-      : resumeData.skills.filter((s) => s.category === active);
+function SkillScale({ level }: { level: number }) {
+  const filled = Math.max(1, Math.round(level / 10));
 
   return (
-    <section id="skills" style={{ padding: "4rem 0" }}>
-      <div className="container">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          style={{ textAlign: "center" }}
-        >
-          <span className="section-label">ทักษะ</span>
-          <h2 className="section-title" style={{ marginBottom: "0.75rem", display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "0.5rem" }}>
-            <span>สิ่งที่ผม</span><span className="gradient-text">ถนัด</span>
-          </h2>
-          <p style={{ color: "var(--text-secondary)", marginBottom: "2rem" }}>
-            เทคโนโลยีและเครื่องมือที่ใช้งานบ่อยในชีวิตประจำวัน
-          </p>
-        </motion.div>
+    <span className="skill-scale">
+      <span
+        className="meter"
+        role="img"
+        aria-label={`ระดับ ${filled} จาก 10`}
+      >
+        {Array.from({ length: 10 }, (_, index) => (
+          <span
+            className={`meter-cell${index < filled ? " is-on" : ""}`}
+            key={index}
+          />
+        ))}
+      </span>
+      <span className="skill-level">{filled}/10</span>
+    </span>
+  );
+}
 
-        {/* Category filter */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "3rem", justifyContent: "center" }}
-        >
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              id={`skill-filter-${cat}`}
-              onClick={() => setActive(cat)}
-              style={{
-                padding: "0.5rem 1.125rem",
-                borderRadius: "99px",
-                border: "1px solid",
-                borderColor: active === cat ? "var(--accent)" : "var(--border)",
-                background: active === cat ? "var(--accent)" : "transparent",
-                color: active === cat ? "#ffffff" : "var(--text-secondary)",
-                fontSize: "0.85rem",
-                fontWeight: 500,
-                cursor: "pointer",
-                transition: "all 0.2s ease",
-              }}
-            >
-              {cat}
-            </button>
-          ))}
-        </motion.div>
-
-        {/* Skills */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-            gap: "1.25rem",
-            marginBottom: "4rem",
-          }}
-        >
-          {filtered.map((skill, i) => (
-            <motion.div
-              key={skill.name}
-              custom={i}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="glass-card"
-              style={{ padding: "1.5rem" }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  marginBottom: "0.75rem",
-                }}
-              >
-                <span style={{ fontWeight: 600, color: "var(--text-primary)", fontSize: "0.95rem" }}>
-                  {skill.name}
-                </span>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                  <span className="tag" style={{ fontSize: "0.7rem" }}>{skill.category}</span>
-                  <span
-                    className="gradient-text"
-                    style={{ fontWeight: 700, fontSize: "0.95rem" }}
-                  >
-                    {skill.level}%
-                  </span>
-                </div>
-              </div>
-              <div className="skill-bar-bg">
-                <motion.div
-                  className="skill-bar-fill"
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.level}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.2, delay: i * 0.05, ease: [0.4, 0, 0.2, 1] }}
-                />
-              </div>
-            </motion.div>
-          ))}
+function SkillGroup({
+  category,
+  items,
+}: {
+  category: string;
+  items: typeof resumeData.skills;
+}) {
+  return (
+    <div>
+      <h3 className="skill-group-title">{category}</h3>
+      {items.map((skill) => (
+        <div className="skill-row" key={skill.name}>
+          <span className="skill-name">{skill.name}</span>
+          <SkillScale level={skill.level} />
         </div>
+      ))}
+    </div>
+  );
+}
 
-        {/* Tech Stack Bubbles */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          style={{ marginTop: "2rem", textAlign: "center" }}
-        >
-          <h3
-            style={{
-              fontWeight: 700,
-              fontSize: "0.9rem",
-              color: "var(--text-secondary)",
-              marginBottom: "1.5rem",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-            }}
-          >
-            Tech Stack ที่ใช้เป็นประจำ
-          </h3>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", justifyContent: "center" }}>
-            {resumeData.techStack.map((tech, i) => (
-              <motion.div
-                key={tech.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: i * 0.04 }}
-                id={`tech-${tech.name.toLowerCase()}`}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  padding: "0.6rem 1.15rem",
-                  background: "var(--bg-card)",
-                  border: "1px solid var(--border)",
-                  borderRadius: "14px",
-                  fontSize: "0.85rem",
-                  fontWeight: 600,
-                  color: "var(--text-primary)",
-                  cursor: "default",
-                  transition: "all 0.25s ease",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-                }}
-              >
-                <span>{tech.icon}</span>
-                <span>{tech.name}</span>
-              </motion.div>
+export function SkillsSection() {
+  return (
+    <section id="skills" className="record-section" aria-labelledby="skills-title">
+      <div className="record-head">
+        <div className="section-head">
+          <h2 className="section-title" id="skills-title">
+            ทักษะและเครื่องมือ
+          </h2>
+          <p className="section-meta">
+            Calibration sheet
+            <br />
+            {resumeData.skills.length} items
+          </p>
+        </div>
+      </div>
+
+      <div className="spread">
+        <div className="page page--left">
+          <div className="record-line">
+            <span>Calibration / core</span>
+            <span>Front &amp; back</span>
+          </div>
+
+          <div className="skill-groups">
+            {leftGroups.map((group) => (
+              <SkillGroup key={group.category} {...group} />
             ))}
           </div>
-        </motion.div>
+
+          <div className="meter-legend">
+            <span className="meter">
+              <span className="meter-cell is-on" />
+              <span className="meter-cell" />
+              <span className="meter-cell" />
+            </span>
+            <span>ประเมินจากงานที่ทำจริง · 10 = ใช้งานคล่อง</span>
+          </div>
+        </div>
+
+        <div className="page page--right">
+          <div className="record-line">
+            <span>Calibration / tools</span>
+            <span>Daily stack</span>
+          </div>
+
+          <div className="skill-groups">
+            {rightGroups.map((group) => (
+              <SkillGroup key={group.category} {...group} />
+            ))}
+          </div>
+
+          <p className="stack-label">Tech stack ที่ใช้เป็นประจำ</p>
+          <div className="stack-grid">
+            {resumeData.techStack.map((tech) => (
+              <span className="stack-tag" key={tech.name}>
+                {tech.name}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-19T00:00:00.000Z",
+  "title": "Design System: Service Record — Worawat Boonrueng",
+  "extensions": {
+    "colorMeta": {
+      "workbench": {
+        "role": "neutral",
+        "displayName": "Workbench Navy",
+        "canonical": "#071725",
+        "tonalRamp": ["#02070b", "#071725", "#0b2236", "#14324a", "#244a64", "#4a6d84", "#8aa3b3", "#d8e4ec"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Ledger Paper",
+        "canonical": "#f3efe3",
+        "tonalRamp": ["#2a241c", "#4b4235", "#6d6251", "#90846f", "#b3a78f", "#d3c9b4", "#e9e2d2", "#faf6eb"]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Service Ink",
+        "canonical": "#132a42",
+        "tonalRamp": ["#07121d", "#132a42", "#24425f", "#3b5d7c", "#5c7d98", "#87a3b8", "#bcccd8", "#eef4f8"]
+      },
+      "cyan": {
+        "role": "secondary",
+        "displayName": "Index Cyan",
+        "canonical": "#0a6d87",
+        "tonalRamp": ["#042a34", "#0a6d87", "#0f8ba8", "#19a7c4", "#4ec1d8", "#86d9e8", "#b9ecf4", "#e8fafc"]
+      },
+      "stamp": {
+        "role": "tertiary",
+        "displayName": "Stamp Red",
+        "canonical": "#a93226",
+        "tonalRamp": ["#3a0d09", "#a93226", "#bf4a3d", "#d36a5e", "#e18e84", "#ecb3ab", "#f5d6d2", "#fdf0ee"]
+      },
+      "manila": {
+        "role": "tertiary",
+        "displayName": "Index Manila",
+        "canonical": "#d9bd8f",
+        "tonalRamp": ["#3d2e16", "#7a5c2e", "#a98245", "#c39f61", "#d9bd8f", "#e5d0ae", "#f0e2c9", "#fbf5e8"]
+      },
+      "cloth": {
+        "role": "neutral",
+        "displayName": "Cloth Cover",
+        "canonical": "#0c2236",
+        "tonalRamp": ["#030c14", "#0c2236", "#143250", "#1e4668", "#2f5e82", "#5b83a3", "#9ab4c8", "#e0ebf3"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Squared Display",
+        "purpose": "Section titles, work-order titles, and the mobile index only."
+      },
+      "body": {
+        "displayName": "Thai Body",
+        "purpose": "Thai body copy, bio, descriptions, and the name at 700."
+      },
+      "label": {
+        "displayName": "Record Label",
+        "purpose": "Metadata, codes, status, page numbers, and credential rows."
+      }
+    },
+    "shadows": [
+      {
+        "name": "cover",
+        "value": "0 34px 80px rgba(0,0,0,0.5), 0 2px 6px rgba(0,0,0,0.35)",
+        "purpose": "The logbook resting on the workbench."
+      },
+      {
+        "name": "paper",
+        "value": "0 2px 10px rgba(0,0,0,0.35)",
+        "purpose": "The paper page inside the cloth cover."
+      },
+      {
+        "name": "object",
+        "value": "0 12px 24px rgba(19,42,66,0.13)",
+        "purpose": "Taped work-order sheets and the portrait."
+      },
+      {
+        "name": "tab",
+        "value": "0 2px 5px rgba(0,0,0,0.28)",
+        "purpose": "The manila index tabs."
+      },
+      {
+        "name": "tape",
+        "value": "0 2px 4px rgba(19,42,66,0.1)",
+        "purpose": "Translucent tape strips."
+      }
+    ],
+    "motion": [
+      {
+        "name": "book-settle",
+        "value": "bookSettle 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both",
+        "purpose": "The page settles onto the desk once on load."
+      },
+      {
+        "name": "tab-in",
+        "value": "tabIn 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both",
+        "purpose": "The index tabs slide in with a 45ms stagger."
+      },
+      {
+        "name": "stamp-press",
+        "value": "stampPress 0.5s 0.45s cubic-bezier(0.16, 1, 0.3, 1) both",
+        "purpose": "The single authored stamp press on the portrait."
+      },
+      {
+        "name": "panel-in",
+        "value": "panelIn 0.18s ease-out both",
+        "purpose": "The work-order sheet changes as a fresh sheet is placed."
+      }
+    ],
+    "breakpoints": [
+      { "name": "small", "value": "380px" },
+      { "name": "phone", "value": "640px" },
+      { "name": "tablet", "value": "900px" },
+      { "name": "rail", "value": "1120px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main action on paper: ink fill, paper text, 44px minimum.",
+      "html": "<a class=\"ds-btn ds-btn--ink\" href=\"#projects\">ดูบันทึกผลงาน</a>",
+      "css": ".ds-btn--ink { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 18px; background: var(--ink, #132a42); color: var(--paper, #f3efe3); border: 1px solid var(--ink, #132a42); border-radius: 2px; font-family: var(--font-body, sans-serif); font-size: 0.88rem; font-weight: 600; line-height: 1.2; text-decoration: none; cursor: pointer; transition: background 0.18s ease, transform 0.18s ease; } .ds-btn--ink:hover { background: #1d3d5d; transform: translateY(-1px); } .ds-btn--ink:focus-visible { outline: 2px solid var(--cyan, #0a6d87); outline-offset: 3px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "The secondary action: transparent with a 1px ink rule.",
+      "html": "<a class=\"ds-btn ds-btn--outline\" href=\"#contact\">ติดต่อ</a>",
+      "css": ".ds-btn--outline { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 18px; background: transparent; color: var(--ink, #132a42); border: 1px solid var(--ink, #132a42); border-radius: 2px; font-family: var(--font-body, sans-serif); font-size: 0.88rem; font-weight: 600; line-height: 1.2; text-decoration: none; cursor: pointer; transition: background 0.18s ease, transform 0.18s ease; } .ds-btn--outline:hover { background: var(--cyan-wash, rgba(10,109,135,0.08)); transform: translateY(-1px); } .ds-btn--outline:focus-visible { outline: 2px solid var(--cyan, #0a6d87); outline-offset: 3px; }"
+    },
+    {
+      "name": "Index Tab",
+      "kind": "nav",
+      "refersTo": "index-tab",
+      "description": "The manila index tab that attaches to the right edge of the book; active tab becomes paper with a cyan punched hole.",
+      "html": "<a class=\"ds-tab ds-tab--active\" href=\"#profile\"><span class=\"ds-tab__hole\"></span>ตัวตน</a>",
+      "css": ".ds-tab { display: inline-flex; align-items: center; gap: 9px; min-height: 46px; padding: 9px 12px 9px 14px; background: var(--manila, #d9bd8f); color: var(--ink, #132a42); border: 1px solid var(--manila-dark, #b3925c); border-left: 0; border-radius: 0 5px 5px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.28); font-family: var(--font-display, sans-serif); font-size: 0.82rem; font-weight: 600; text-decoration: none; } .ds-tab__hole { width: 6px; height: 6px; border-radius: 50%; background: var(--desk, #071725); box-shadow: inset 0 0 0 1px rgba(0,0,0,0.45); } .ds-tab--active { background: var(--paper-3, #fbf8ee); color: var(--ink, #132a42); border-color: var(--paper-edge, #d7cab0); } .ds-tab--active .ds-tab__hole { background: var(--cyan, #0a6d87); box-shadow: inset 0 0 0 1px var(--cyan, #0a6d87); }"
+    },
+    {
+      "name": "Work Register Tab",
+      "kind": "custom",
+      "description": "A work-order row in the project register; selected rows take the cyan wash and the order number turns ink.",
+      "html": "<button class=\"ds-work-tab\" aria-selected=\"true\"><span class=\"ds-work-tab__num\">01</span><span class=\"ds-work-tab__body\"><strong>Tee Ob Waffle POS System</strong><small>Full-stack · POS</small></span><span class=\"ds-work-tab__state\">LIVE</span></button>",
+      "css": ".ds-work-tab { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 10px; width: 100%; padding: 14px 6px 14px 0; background: transparent; border: 0; border-bottom: 1px solid rgba(19,42,66,0.16); color: var(--ink, #132a42); font-family: var(--font-body, sans-serif); text-align: left; cursor: pointer; } .ds-work-tab[aria-selected=\"true\"] { padding-left: 9px; background: var(--cyan-wash, rgba(10,109,135,0.08)); } .ds-work-tab__num { padding-top: 2px; color: var(--cyan, #0a6d87); font-family: var(--font-code, monospace); font-size: 10px; } .ds-work-tab[aria-selected=\"true\"] .ds-work-tab__num { color: var(--ink, #132a42); font-weight: 500; } .ds-work-tab__body strong { display: block; font-family: var(--font-display, sans-serif); font-size: 0.95rem; font-weight: 600; line-height: 1.3; } .ds-work-tab__body small { display: block; margin-top: 2px; color: var(--ink-faint, #566574); font-size: 0.75rem; } .ds-work-tab__state { align-self: start; padding: 2px 5px; border: 1px solid var(--cyan, #0a6d87); border-radius: 2px; color: var(--cyan, #0a6d87); font-family: var(--font-code, monospace); font-size: 10px; letter-spacing: 0.08em; } .ds-work-tab:focus-visible { outline: 2px solid var(--cyan, #0a6d87); outline-offset: 2px; }"
+    },
+    {
+      "name": "Tech Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "A small technical tag: 1px rule, 2px corner, mono uppercase.",
+      "html": "<span class=\"ds-tag\">POSTGRESQL</span>",
+      "css": ".ds-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 2px 7px; border: 1px solid rgba(19,42,66,0.32); border-radius: 2px; color: var(--ink-soft, #46586a); font-family: var(--font-code, monospace); font-size: 10px; line-height: 1.3; letter-spacing: 0.04em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Request Slip",
+      "kind": "custom",
+      "description": "The contact block reads as a service request form: a 1px rule, dotted rows, no shadow.",
+      "html": "<div class=\"ds-request\"><p class=\"ds-request__title\">Service request</p><div class=\"ds-request__row\"><span>Email</span><a href=\"mailto:mzamzababatv@gmail.com\">mzamzababatv@gmail.com</a></div><div class=\"ds-request__row\"><span>Status</span><b>พร้อมเริ่มงาน · Internship / Junior</b></div></div>",
+      "css": ".ds-request { padding: 18px 18px 16px; border: 1px solid rgba(19,42,66,0.32); background: rgba(255,255,255,0.28); } .ds-request__title { margin: 0 0 8px; padding-bottom: 7px; border-bottom: 1px solid rgba(19,42,66,0.16); color: var(--ink-faint, #566574); font-family: var(--font-code, monospace); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; } .ds-request__row { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 10px; padding: 7px 0; border-bottom: 1px dotted rgba(19,42,66,0.16); font-family: var(--font-body, sans-serif); font-size: 0.84rem; line-height: 1.5; } .ds-request__row:last-child { border-bottom: 0; } .ds-request__row span { color: var(--ink-faint, #566574); font-family: var(--font-code, monospace); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; } .ds-request__row a, .ds-request__row b { color: var(--ink, #132a42); font-weight: 500; text-decoration-color: rgba(19,42,66,0.32); text-underline-offset: 0.2em; }"
+    },
+    {
+      "name": "Availability Stamp",
+      "kind": "custom",
+      "description": "The one red rubber stamp: 3px border, rotated -6deg, multiply blend, sits on the portrait.",
+      "html": "<span class=\"ds-stamp\">พร้อมเริ่มงาน<small>Open to work</small></span>",
+      "css": ".ds-stamp { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 7px 12px; border: 3px solid var(--stamp, #a93226); border-radius: 3px; background: rgba(169,50,38,0.035); box-shadow: inset 0 0 0 1px rgba(169,50,38,0.3); color: var(--stamp, #a93226); font-family: var(--font-display, sans-serif); font-size: 0.82rem; font-weight: 700; line-height: 1.2; text-align: center; text-transform: uppercase; transform: rotate(-6deg); mix-blend-mode: multiply; } .ds-stamp small { font-family: var(--font-code, monospace); font-size: 9px; font-weight: 500; letter-spacing: 0.16em; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Service Logbook",
+    "overview": "The site is a hardback service log dropped open on a dark workbench. Paper is the page itself, never a card floating on a page: the navy cloth cover, the grid paper, the manila index tabs, the tape holding the portrait, and one red rubber stamp make the record feel maintained rather than decorated. The world stays quiet so the content can be loud: a recruiter should remember a working record, not a theme.\n\nThe logbook devices are functional, not costume. The right-edge tabs are the navigation; the project register is a real tablist with keyboard support; the selected work order is a taped-in sheet; the POS test login is printed where it can be used. On mobile the spread stacks into one page and a compact \"3 live systems\" proof strip keeps the work inside the first viewport.\n\nThe voice is Thai-first and direct. The record is optimistic without hype: every claim is visible in the page or one click away.",
+    "keyCharacteristics": [
+      "Warm grid paper as the ground, framed by a navy cloth cover on a dark workbench.",
+      "Manila index tabs on the right edge; a sticky rail on desktop, a paper drawer on mobile.",
+      "Squared technical display type, calm Thai body type, and mono record labels.",
+      "One red availability stamp; cyan is reserved for the index, links, and live states.",
+      "Work orders with live demos and a working POS test login.",
+      "A single light world; no dark-mode toggle in this system."
+    ],
+    "rules": [
+      {
+        "name": "The Paper Ground Rule",
+        "body": "The page is paper. Do not turn the paper into a stack of rounded cards; sections are ruled records, tabs, and taped sheets.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Stamp Rule",
+        "body": "Red appears once, as the availability stamp. If red is used for status, errors, or decoration, the mark loses its meaning.",
+        "section": "colors"
+      },
+      {
+        "name": "The Index Rule",
+        "body": "Cyan marks the current place and the live path: the active tab hole, links, focus, and live badges. It never becomes a gradient or a glow.",
+        "section": "colors"
+      },
+      {
+        "name": "The Name Rule",
+        "body": "Set the Thai name in Anuphan 700. The display face may run the section titles; it never runs the name a recruiter has to read first.",
+        "section": "typography"
+      },
+      {
+        "name": "The Ledger Rule",
+        "body": "Mono type is for metadata, codes, numbers, and status. Thai body copy is always Anuphan.",
+        "section": "typography"
+      },
+      {
+        "name": "The Physical Layer Rule",
+        "body": "Every shadow belongs to an object that could exist on the desk: cover, paper, tape, tab, photo. No zero-offset glows.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep paper as the page ground and the dark workbench outside it.",
+      "Do use the right-edge tabs as the desktop index and the paper drawer as the mobile index.",
+      "Do set the Thai name in Anuphan 700 and section titles in Chakra Petch.",
+      "Do keep the red stamp rare and literal: availability, not decoration.",
+      "Do keep the live project demos and working test logins visible.",
+      "Do keep the mobile \"3 live systems\" proof strip in the first viewport.",
+      "Do hold 44px touch targets, visible focus, reduced motion, and Thai line lengths."
+    ],
+    "donts": [
+      "Don't turn sections into equal rounded cards or nested cards.",
+      "Don't use gradient text, glass panels, emoji icons, or a colored side stripe on rows.",
+      "Don't set Thai body copy in the mono face.",
+      "Don't add a dark-mode toggle; this system is one light record.",
+      "Don't invent employers, clients, user counts, or metrics.",
+      "Don't let the display face set the name or a long Thai paragraph.",
+      "Don't hide the project proof below the mobile fold."
+    ]
+  }
+}

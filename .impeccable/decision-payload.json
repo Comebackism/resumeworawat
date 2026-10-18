@@ -1,0 +1,182 @@
+{
+  "title": "เลือกทิศทางภาพสำหรับ Resume",
+  "question": "ผลัดนี้ได้ Queue Ticket — จะเก็บไว้ เลือกใบอื่น หรือ re-roll? ทุกใบใช้เนื้อหาและ palette น้ำเงินเดิมของคุณ",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Queue Ticket",
+      "kicker": "THE ROLL",
+      "lineage": "ใบคิวและใบเสร็จจากร้านวาฟเฟิลที่ใช้งานจริง",
+      "thesis": "เรซูเม่ที่พิมพ์ออกมาจากเครื่องคิดเงินของร้านจริง — หลักฐานการทำงาน ไม่ใช่คำโฆษณา",
+      "palette": ["#081A2F", "#F4EFE2", "#14263F", "#0A7EA4", "#C0392B"],
+      "materials": ["thermal paper", "perforation", "rubber stamp", "barcode"],
+      "viewport": "ใบเสร็จยาวใบเดียวห้อยบนเคาน์เตอร์ navy: รูปถ่ายพิมพ์ความร้อน ชื่อ ตำแหน่ง และแถวผลงานแบบ order lines",
+      "risk": "ถ้าพิมพ์หนังเกิน จะอ่านเป็นธีมร้านอาหารแทนหลักฐานทางวิศวกรรม",
+      "raised": [
+        {
+          "from": "challenger-deep-dive",
+          "raise": "แกนแนวตั้งเดียวคุมทุกบรรทัด — เส้นประกลางใบเสร็จทำหน้าที่เป็น index ของทุก section"
+        },
+        {
+          "from": "challenger-dubois-data-portraits",
+          "raise": "ทักษะแสดงเป็นแท่งหมึกหนาแบบ data portrait ไม่ใช่ progress bar"
+        },
+        {
+          "from": "challenger-noir-one-sheet",
+          "raise": "บล็อกติดต่อเป็น billing block เส้นตรงชิดกันที่ท้ายใบเสร็จ"
+        },
+        {
+          "from": "challenger-drum-machine",
+          "raise": "แถบ chase light บาง ๆ บนขอบจอบอกว่าอ่านถึง section ไหน"
+        }
+      ],
+      "wireframe": {
+        "cols": 12,
+        "rows": 12,
+        "regions": [
+          { "label": "counter", "x": 0, "y": 0, "w": 12, "h": 12 },
+          { "label": "receipt strip", "x": 3, "y": 0, "w": 6, "h": 12 },
+          { "label": "receipt meta", "x": 4, "y": 0, "w": 4, "h": 1, "accent": true },
+          { "label": "portrait", "x": 4, "y": 1, "w": 2, "h": 2 },
+          { "label": "name + role", "x": 6, "y": 1, "w": 3, "h": 2 },
+          { "label": "printed index", "x": 4, "y": 3, "w": 5, "h": 2 },
+          { "label": "order lines", "x": 4, "y": 5, "w": 5, "h": 4 },
+          { "label": "tear-off contact stub", "x": 4, "y": 9, "w": 5, "h": 2, "accent": true }
+        ]
+      }
+    },
+    {
+      "id": "model-pick",
+      "label": "Service Logbook",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "สมุดบันทึกงานซ่อมของช่าง IT",
+      "thesis": "เรซูเม่ในรูปสมุดงานซ่อมที่มีแท็บจริงให้เปิด — ประวัติการดูแลระบบที่ยังทำงานอยู่",
+      "palette": ["#16324F", "#F2EFE4", "#C0392B", "#1B7FA8", "#6B6B5E"],
+      "materials": ["clothbound logbook", "grid paper", "manila tabs", "rubber stamps"],
+      "viewport": "สมุดเปิดสองหน้าบนโต๊ะทำงาน: รูปถ่ายติด staples, asset record, และแท็บ PROFILE ที่เปิดอยู่",
+      "risk": "ถ้า skeuomorphic เกินจะดูเป็น props ในฉากมากกว่าพอร์ตที่ใช้งานได้",
+      "wireframe": {
+        "cols": 12,
+        "rows": 10,
+        "regions": [
+          { "label": "desk ground", "x": 0, "y": 0, "w": 12, "h": 10 },
+          { "label": "open logbook", "x": 1, "y": 1, "w": 10, "h": 8 },
+          { "label": "spine", "x": 6, "y": 1, "w": 1, "h": 8, "accent": true },
+          { "label": "left page: photo + asset record", "x": 2, "y": 2, "w": 4, "h": 6 },
+          { "label": "right page: service entries", "x": 7, "y": 2, "w": 4, "h": 6 },
+          { "label": "manila tabs", "x": 10, "y": 2, "w": 1, "h": 6, "accent": true }
+        ]
+      }
+    },
+    {
+      "id": "challenger-dubois-data-portraits",
+      "label": "Du Bois Data Portraits",
+      "verdict": "competitive",
+      "lineage": "ชุดแผนภูมิข้อมูลของ W.E.B. Du Bois (1900)",
+      "thesis": "ทักษะและเส้นทางเป็นแผนภูมิหมึกที่โต้แย้งด้วยข้อมูล ไม่ใช่คำโฆษณา",
+      "palette": ["#EFE3C8", "#B22A2A", "#D9A521", "#1F6B4A", "#191512"],
+      "materials": ["hand-inked charts", "aged paper", "flat color fields"],
+      "viewport": "หน้าแรกเป็น portrait ข้อมูล: เส้นเวลาหนึ่งเส้นคลี่เป็นกราฟ พร้อมตัวเลข GPA และจำนวนโปรเจกต์",
+      "case": "Fuses cleanly: skills become a bold data argument; loses narrowly on recruiter recognition.",
+      "risk": "ถ้ากราฟมากเกินจะอ่านเป็น infographic ไม่ใช่ตัวตนของคน",
+      "hero": "https://impeccable.style/worlds/cards/dubois-data-portraits-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/dubois-data-portraits.webp",
+      "wireframe": {
+        "cols": 12,
+        "rows": 10,
+        "regions": [
+          { "label": "aged paper", "x": 0, "y": 0, "w": 12, "h": 10 },
+          { "label": "hand-lettered title", "x": 1, "y": 1, "w": 10, "h": 1 },
+          { "label": "data portrait", "x": 1, "y": 2, "w": 10, "h": 5, "accent": true },
+          { "label": "caption block", "x": 1, "y": 7, "w": 10, "h": 2 }
+        ]
+      }
+    },
+    {
+      "id": "challenger-drum-machine",
+      "label": "Drum Machine Step Row",
+      "verdict": "declined",
+      "lineage": "เครื่องจังหวะแบบ step sequencer",
+      "thesis": "ผลงานเป็น pattern ที่กดเขียนลงแถวเดียวแล้ววิ่งเป็นจังหวะ",
+      "palette": ["#2B2B2B", "#E03A3A", "#F08A2C", "#F2D24B", "#F2F2F2"],
+      "materials": ["charcoal panel", "silk-screened labels", "lit LEDs"],
+      "viewport": "แถว 16 step เรืองแสงใต้จอ tempo สีแดง พร้อม pattern bank ด้านหลัง",
+      "risk": "read as music gear, not a hiring portfolio",
+      "kept": "แถวเดี่ยวที่บอกตำแหน่งปัจจุบันตลอดเวลา",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-drum-machine-step-row-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/signals-instruments-drum-machine-step-row.webp"
+    },
+    {
+      "id": "challenger-algorave",
+      "label": "Algorave Source Floor",
+      "verdict": "declined",
+      "lineage": "floor ของ algorave ที่โค้ดแก้เพลงสด ๆ",
+      "thesis": "หน้าเว็บเป็น code buffer ที่แก้แล้วเห็นผลในจังหวะถัดไป",
+      "palette": ["#0B0B0B", "#5BFF8A", "#FF4BD8", "#FFC24B"],
+      "materials": ["projector black", "phosphor syntax", "stage light"],
+      "viewport": "code buffer ขนาดเวที พร้อมบรรทัดที่กำลังจะเปลี่ยน flashed amber",
+      "risk": "niche เกินกว่าจะสื่อสารกับ recruiter ทั่วไป",
+      "kept": "การเห็นการเปลี่ยนแปลงล่วงหน้าก่อนมันเกิดขึ้น",
+      "hero": "https://impeccable.style/worlds/cards/medium-native-algorave-source-floor-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/medium-native-algorave-source-floor.webp"
+    },
+    {
+      "id": "challenger-noir-one-sheet",
+      "label": "Noir One-Sheet",
+      "verdict": "declined",
+      "lineage": "โปสเตอร์หนังอาชญากรรมยุคหลังสงคราม",
+      "thesis": "คนตัวเล็กกับเงาที่ยาวกว่า และชื่อเรื่องที่อ่านเหมือนคำกล่าวหา",
+      "palette": ["#121212", "#B5762B", "#F1E7D0"],
+      "materials": ["duotone ink", "cream stock", "condensed caps"],
+      "viewport": "โปสเตอร์หนึ่งใบ เงาทอดข้ามถนน และ billing block ชิดขอบล่าง",
+      "risk": "cinema world ไม่ใช่ hiring world",
+      "kept": "billing block ที่ล็อกชิดขอบล่าง",
+      "hero": "https://impeccable.style/worlds/cards/posters-covers-sleeves-noir-one-sheet-duotone-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/posters-covers-sleeves-noir-one-sheet-duotone.webp"
+    },
+    {
+      "id": "challenger-deep-dive",
+      "label": "Mesophotic Deep Dive",
+      "verdict": "declined",
+      "lineage": "การดำน้ำลึกแนว wall dive",
+      "thesis": "หน้าเว็บคือการไล่ระดับความลึกที่สีและแสงเปลี่ยนตาม",
+      "palette": ["#04121F", "#0B3A5A", "#0FA3B1", "#E8F1F2"],
+      "materials": ["depth axis", "marine snow", "thermocline band"],
+      "viewport": "แกนความลึกแนวตั้งเส้นเดียว พร้อม reading ลึกและอุณหภูมิเปลี่ยนตาม section",
+      "risk": "โลกนักดำน้ำไม่เกี่ยวกับการรับสมัครงาน",
+      "kept": "แกนแนวตั้งเดียวที่คุมทุกบรรทัด",
+      "hero": "https://impeccable.style/worlds/cards/rivers-tides-ocean-depths-mesophotic-deep-dive-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/rivers-tides-ocean-depths-mesophotic-deep-dive.webp"
+    },
+    {
+      "id": "challenger-akari",
+      "label": "Akari Paper Light",
+      "verdict": "declined",
+      "lineage": "โคมกระดาษ washi ของ Akari",
+      "thesis": "หน้าเว็บเป็นโคมกระดาษที่ส่องสว่างจากข้างใน",
+      "palette": ["#F3E7CF", "#C89B5B", "#2E2A25", "#C63A2F"],
+      "materials": ["washi", "bamboo ribs", "diffused bulb"],
+      "viewport": "โคมหลายใบห้อยคนละความสูงในห้องสลัว เลื่อนไปตามแสง",
+      "risk": "too atmospheric for a working portfolio",
+      "kept": "กระดาษที่เปล่งแสงจากภายใน",
+      "hero": "https://impeccable.style/worlds/cards/paper-folds-pleats-deployable-akari-light-sculpture-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/paper-folds-pleats-deployable-akari-light-sculpture.webp"
+    }
+  ],
+  "reroll": {
+    "registers": ["safer", "bolder"]
+  },
+  "buildPath": {
+    "value": "code"
+  },
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "พอร์ตโฟลิโอสะอาด ๆ แบบที่ตลาดส่งกัน: hero, การ์ดผลงาน, และปุ่มติดต่อ",
+    "palette": ["#FFFFFF", "#111827", "#2563EB"],
+    "materials": ["clean grid", "product photography"],
+    "viewport": "headline + subcopy + ปุ่ม + แถวการ์ดเท่ากัน",
+    "risk": "แยกไม่ออกจากคู่แข่งโดยการออกแบบ"
+  },
+  "steer": true
+}

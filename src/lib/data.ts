@@ -78,6 +78,10 @@ export const resumeData = {
       github: "https://github.com/Comebackism/Project_waffle_tee_ob",
       demo: "https://project-waffle-tee-ob.vercel.app/login",
       demo2: "",
+      role: "Full-stack · POS",
+      status: "LIVE",
+      proof:
+        "ระบบที่ร้านใช้งานจริง ครอบคลุมตั้งแต่ลูกค้าสแกน QR สั่งอาหาร แคชเชียร์ ห้องครัว คลังสินค้า ไปจนถึงแดชบอร์ดยอดขาย",
       credentials: [
         { role: "แคชเชียร์", username: "mzaba01", password: "1234" },
         { role: "ครัว (KDS)", username: "nipat", password: "1234" },
@@ -94,6 +98,10 @@ export const resumeData = {
       github: "https://github.com/Comebackism/mjaytea",
       demo: "https://mjaytea.vercel.app",
       demo2: "",
+      role: "Design + Front-end",
+      status: "LIVE",
+      proof:
+        "ออกแบบและสร้างแบรนด์ร้านชาให้อ่านง่ายบนมือถือ ด้วยการจัดวางตัวอักษรไทยและจังหวะพื้นที่ที่นิ่ง",
       gradient: "from-emerald-600 to-teal-600",
       emoji: "",
     },
@@ -105,6 +113,10 @@ export const resumeData = {
       tech: ["React", "Vite", "Node.js", "Express", "Tailwind CSS"],
       github: "https://github.com/Comebackism/worawat_computer-e-com-",
       demo: "https://worawat-computer-e-com.vercel.app/",
+      role: "Full-stack · E-commerce",
+      status: "LIVE",
+      proof:
+        "ฝึก flow การขายจริงตั้งแต่หน้ารายการสินค้า ตะกร้า ไปจนถึงการจำลองคำสั่งซื้อ และแยกส่วน front-end กับ API ชัดเจน",
       gradient: "from-fuchsia-600 to-pink-600",
       emoji: "",
     },

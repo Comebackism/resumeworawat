@@ -1,26 +1,32 @@
 import type { Metadata } from "next";
-import { Prompt, Kanit } from "next/font/google";
+import { Anuphan, Chakra_Petch, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider";
-import { Navbar } from "@/components/Navbar";
 
-const prompt = Prompt({
-  variable: "--font-sans",
+const anuphan = Anuphan({
+  variable: "--font-body",
   subsets: ["latin", "thai"],
-  weight: ["300", "400", "500", "600"],
+  weight: "variable",
   display: "swap",
 });
 
-const kanit = Kanit({
+const chakra = Chakra_Petch({
   variable: "--font-display",
   subsets: ["latin", "thai"],
-  weight: ["500", "600", "700", "800"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  variable: "--font-code",
+  subsets: ["latin"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Worawat Boonrueng | IT Technologist",
-  description: "Personal Resume & Portfolio of Worawat Boonrueng, a student and developer based in Songkhla.",
+  title: "Worawat Boonrueng — Junior Developer | Service Record",
+  description:
+    "บันทึกการทำงานของวรวัฒน์ บุญเรือง นักพัฒนาเว็บและนักศึกษา IT มหาวิทยาลัยสงขลานครินทร์ พร้อมผลงานที่ deploy ใช้งานจริง",
 };
 
 export default function RootLayout({
@@ -31,19 +37,14 @@ export default function RootLayout({
   return (
     <html
       lang="th"
-      className={`${prompt.variable} ${kanit.variable} h-full antialiased scroll-smooth`}
+      className={`${anuphan.variable} ${chakra.variable} ${mono.variable} antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col transition-colors duration-300 overflow-x-hidden pt-4" suppressHydrationWarning>
-        <ThemeProvider>
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <footer className="py-12 text-center text-sm border-t border-white/5 opacity-60">
-            <div className="container mx-auto px-4" style={{ marginTop: "1.5rem" }}>
-              <p>© {new Date().getFullYear()} Worawat.boonrueng. Built with Next.js 16 & Tailwind CSS v4.</p>
-            </div>
-          </footer>
-        </ThemeProvider>
+      <body>
+        <a className="skip-link" href="#profile">
+          ข้ามไปยังเนื้อหา
+        </a>
+        {children}
       </body>
     </html>
   );
