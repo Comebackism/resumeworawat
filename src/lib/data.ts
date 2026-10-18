@@ -70,6 +70,22 @@ export const resumeData = {
 
   projects: [
     {
+      id: 6,
+      title: "Tee Ob Waffle POS System",
+      description:
+        "ระบบ POS ครบวงจรสำหรับร้าน ตี๋อบ วาฟเฟิล HongKong ตั้งแต่ลูกค้าสแกน QR Code สั่งอาหารที่โต๊ะ, ระบบแคชเชียร์, หน้าจอครัว (KDS), จัดการคลังสินค้าและเมนู ไปจนถึงแดชบอร์ดสรุปยอดขาย รองรับชำระเงินสดและ PromptPay พร้อมตรวจสอบสลิปอัตโนมัติ",
+      tech: ["React 19", "Vite", "Express", "PostgreSQL", "JWT", "Cloudinary"],
+      github: "https://github.com/Comebackism/Project_waffle_tee_ob",
+      demo: "https://project-waffle-tee-ob.vercel.app/login",
+      demo2: "",
+      credentials: [
+        { role: "แคชเชียร์", username: "mzaba01", password: "1234" },
+        { role: "ครัว (KDS)", username: "nipat", password: "1234" },
+      ],
+      gradient: "from-red-600 to-amber-500",
+      emoji: "",
+    },
+    {
       id: 1,
       title: "Resume Website",
       description:

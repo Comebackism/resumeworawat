@@ -80,7 +80,34 @@ export function ProjectsSection() {
                   {project.description}
                 </p>
 
-
+                {/* Demo credentials */}
+                {project.credentials && (
+                  <div className="mb-6 rounded-2xl border border-dashed border-gray-300 dark:border-gray-600 bg-gray-50/80 dark:bg-white/5 px-4 py-3">
+                    <p className="text-xs font-bold tracking-wider text-[#003C71] dark:text-[#66CCFF] uppercase mb-2">
+                      บัญชีทดลองเข้าใช้งาน
+                    </p>
+                    <div className="flex flex-col gap-1">
+                      {project.credentials.map((account) => (
+                        <p
+                          key={account.username}
+                          className="text-sm text-gray-700 dark:text-gray-300"
+                        >
+                          <span className="font-semibold">{account.role}:</span>{" "}
+                          <code className="rounded bg-gray-200/80 dark:bg-white/10 px-1.5 py-0.5 font-mono text-[0.8rem]">
+                            {account.username}
+                          </code>{" "}
+                          /{" "}
+                          <code className="rounded bg-gray-200/80 dark:bg-white/10 px-1.5 py-0.5 font-mono text-[0.8rem]">
+                            {account.password}
+                          </code>
+                        </p>
+                      ))}
+                    </div>
+                    <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+                      หลังเข้าสู่ระบบให้เลือกเครื่อง POS เพื่อเริ่มใช้งาน
+                    </p>
+                  </div>
+                )}
 
                 {/* Links */}
                 <div className="flex flex-wrap gap-4 mt-auto pt-8">
