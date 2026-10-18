@@ -86,29 +86,6 @@ export const resumeData = {
       emoji: "",
     },
     {
-      id: 1,
-      title: "Resume Website",
-      description:
-        "เว็บไซต์ Resume ส่วนตัวที่ออกแบบและพัฒนาเอง มี Animation สวยงาม รองรับ Dark/Light Mode พร้อม Responsive Design",
-      tech: ["Next.js", "TypeScript", "Framer Motion", "CSS"],
-      github: "https://github.com/Comebackism/resumeworawat",
-      demo: "",
-      gradient: "from-violet-600 to-indigo-600",
-      emoji: "",
-    },
-    {
-      id: 2,
-      title: "Artee Waffle Ordering App",
-      description:
-        "ระบบสั่งอาหารสำหรับร้านวาฟเฟิล รองรับการสั่งซื้อแบบ Real-time ผ่าน Firebase มีหน้า Dashboard สำหรับร้านค้า",
-      tech: ["Next.js", "Firebase", "TypeScript", "Tailwind CSS"],
-      github: "https://github.com/Comebackism/wafflehongongartee",
-      demo: "https://wafflehongongartee-1x99.vercel.app/",
-      demo2: "https://wafflehongongartee-1x99.vercel.app/kitchen", // เพิ่มพื้นที่สำหรับ Demo ที่ 2 เช่น หน้า Admin
-      gradient: "from-amber-600 to-orange-600",
-      emoji: "",
-    },
-    {
       id: 3,
       title: "Mjaytea Landing Page",
       description:
@@ -118,17 +95,6 @@ export const resumeData = {
       demo: "https://mjaytea.vercel.app",
       demo2: "",
       gradient: "from-emerald-600 to-teal-600",
-      emoji: "",
-    },
-    {
-      id: 4,
-      title: "Gym Workout App",
-      description:
-        "เว็บแอปพลิเคชันสำหรับบันทึกการออกกำลังกาย มีระบบจัดการข้อมูลผู้ใช้ พร้อม Dashboard สรุปผล เข้าทดลองใช้งานโดยใช้รหัสทดสอบ [user@gymapp.com] / SecurePass123!",
-      tech: ["Next.js", "Prisma", "SQLite", "Tailwind CSS"],
-      github: "https://github.com/Comebackism/gymapp",
-      demo: "https://gymapp-rosy-three.vercel.app/",
-      gradient: "from-blue-600 to-cyan-600",
       emoji: "",
     },
     {
