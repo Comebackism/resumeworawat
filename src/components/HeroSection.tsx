@@ -8,10 +8,7 @@ export function HeroSection() {
   const [firstName, ...rest] = resumeData.name.split(" ");
   const lastName = rest.join(" ");
   const liveProjects = resumeData.projects;
-  const toolkit = resumeData.techStack
-    .map((tech) => tech.name)
-    .filter((name) => name !== "Next.js" && name !== "TypeScript")
-    .slice(0, 10);
+  const toolkit = resumeData.techStack.map((tech) => tech.name).slice(0, 10);
 
   return (
     <section id="profile" className="spread hero" aria-labelledby="hero-name">

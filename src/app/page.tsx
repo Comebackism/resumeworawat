@@ -25,7 +25,7 @@ export default function Home() {
 
         <footer className="site-footer">
           <span>© 2026 Worawat Boonrueng · Service Record</span>
-          <span>Next.js 16 · Tailwind CSS v4 · Static build</span>
+          <span>React 19 · Tailwind CSS v4 · Static build</span>
         </footer>
       </main>
     </>

@@ -22,7 +22,7 @@ export const resumeData = {
       period: "2025 – ปัจจุบัน",
       description:
         "พัฒนาเว็บไซต์และ Web App ด้วยตัวเองเพื่อฝึกฝนทักษะ ทั้ง Frontend และ Backend เรียนรู้จากการลงมือทำจริง ตั้งแต่ออกแบบ UI จนถึง Deploy",
-      tags: ["Next.js", "TypeScript", "Firebase", "Vercel"],
+      tags: ["React", "Firebase", "Vercel"],
     },
     {
       id: 2,
@@ -37,8 +37,8 @@ export const resumeData = {
 
   skills: [
     { name: "HTML & CSS", level: 65, category: "Frontend" },
-    { name: "JavaScript / TypeScript", level: 65, category: "Frontend" },
-    { name: "React & Next.js", level: 65, category: "Frontend" },
+    { name: "JavaScript", level: 65, category: "Frontend" },
+    { name: "React", level: 65, category: "Frontend" },
     { name: "Tailwind CSS", level: 65, category: "Frontend" },
     { name: "Node.js", level: 60, category: "Backend" },
     { name: "SQL", level: 65, category: "Backend" },
@@ -52,8 +52,6 @@ export const resumeData = {
   ],
 
   techStack: [
-    { name: "Next.js", icon: "" },
-    { name: "TypeScript", icon: "" },
     { name: "React", icon: "" },
     { name: "Node.js", icon: "" },
     { name: "SQL", icon: "" },
@@ -94,7 +92,7 @@ export const resumeData = {
       title: "Mjaytea Landing Page",
       description:
         "Landing Page สำหรับร้านชา ออกแบบ Minimal & Cozy ใช้ Typography ภาษาไทยที่สวยงาม เน้นความอบอุ่นและเป็นกันเอง",
-      tech: ["Next.js", "CSS", "Google Fonts"],
+      tech: ["CSS", "Google Fonts", "Vercel"],
       github: "https://github.com/Comebackism/mjaytea",
       demo: "https://mjaytea.vercel.app",
       demo2: "",
