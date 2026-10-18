@@ -8,6 +8,10 @@ export function HeroSection() {
   const [firstName, ...rest] = resumeData.name.split(" ");
   const lastName = rest.join(" ");
   const liveProjects = resumeData.projects;
+  const toolkit = resumeData.techStack
+    .map((tech) => tech.name)
+    .filter((name) => name !== "Next.js" && name !== "TypeScript")
+    .slice(0, 10);
 
   return (
     <section id="profile" className="spread hero" aria-labelledby="hero-name">
@@ -138,9 +142,9 @@ export function HeroSection() {
 
         <p className="stack-label hero-stack-label">Daily toolkit</p>
         <div className="stack-grid">
-          {resumeData.techStack.slice(0, 10).map((tech) => (
-            <span className="stack-tag" key={tech.name}>
-              {tech.name}
+          {toolkit.map((name) => (
+            <span className="stack-tag" key={name}>
+              {name}
             </span>
           ))}
         </div>
