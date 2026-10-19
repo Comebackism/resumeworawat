@@ -146,11 +146,6 @@ export function HeroSection() {
           ))}
         </div>
 
-        <div className="hero-proof">
-          <span className="rule-label">Proof, not claims</span>
-          <p>ทุกผลงานมี repo และ demo ให้กดตรวจ · POS ใช้งานจริงที่ร้าน · GPA 3.45</p>
-        </div>
-
         <div className="hero-foot">
           <span>Deployed on Vercel</span>
           <span>02 — 05</span>

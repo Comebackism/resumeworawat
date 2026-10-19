@@ -795,19 +795,6 @@ a {
   border-top: 0;
 }
 
-.hero-proof {
-  margin-top: 16px;
-  padding-top: 11px;
-  border-top: 1px solid var(--rule);
-  color: var(--ink-soft);
-  font-size: 0.82rem;
-  line-height: 1.6;
-}
-
-.hero-proof p {
-  margin: 4px 0 0;
-}
-
 .hero-foot {
   display: flex;
   align-items: flex-end;

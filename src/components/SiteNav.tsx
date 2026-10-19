@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { FiArrowUpRight, FiMenu, FiX } from "react-icons/fi";
 
 const sections = [
-  { id: "profile", label: "ตัวตน" },
+  { id: "profile", label: "โปรไฟล์" },
   { id: "experience", label: "ประสบการณ์" },
   { id: "skills", label: "ทักษะ" },
   { id: "projects", label: "ผลงาน" },
